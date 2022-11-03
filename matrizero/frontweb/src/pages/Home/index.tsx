@@ -1,5 +1,6 @@
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
 import ButtonIcon from 'components/ButtonIcon';
+import Example from 'components/Modal';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
@@ -27,6 +28,9 @@ const Home = () => {
         <div className="home-image-container">
           <MainImage />
         </div>
+      </div>
+      <div className="base-card home-card">
+      <Example />
       </div>
     </div>
   );
