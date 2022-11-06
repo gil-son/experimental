@@ -1,0 +1,115 @@
+ @media (max-width: 1920px) {
+     #blo {
+         width: 327px;
+         height: 152px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 409px 0px 0px 71px;
+         text-align: center;
+     }
+ }
+
+
+
+
+ @media (max-width: 1400px) {
+     #blo {
+         width: 328px;
+         height: 137px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 530px 0px 0px 76px;
+         text-align: center;
+     }
+ }
+
+
+
+ @media (max-width: 1280px) {
+     #blo {
+         width: 328px;
+         height: 137px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 445px 0px 0px 76px;
+         text-align: center;
+     }
+ }
+
+ @media (max-width: 1121px) {
+     #blo {
+         width: 328px;
+         height: 137px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 445px 0px 0px 76px;
+         text-align: center;
+     }
+
+
+ }
+
+
+ @media (max-width: 768px) {
+
+     #blo {
+         width: 333px;
+         height: 160px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 408px 0px 0px 76px;
+         text-align: center;
+     }
+ }
+
+
+ @media (max-width: 576px) {
+
+     #blo {
+         width: 335px;
+         height: 154px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 414px 0px 0px 74px;
+         text-align: center;
+     }
+ }
+
+
+
+ @media (max-width: 420px) {
+
+     #blo {
+         width: 335px;
+         height: 174px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 414px 0px 0px 27px;
+         text-align: center;
+     }
+ }
+
+
+ @media (max-width: 360px) {
+
+     iframe {
+         width: 300px;
+     }
+
+     #blo {
+         width: 300px;
+         height: 174px;
+         background-color: #7ca1b1;
+         color: white;
+         position: absolute;
+         margin: 392px 0px 0px 0px;
+         text-align: center;
+     }
+ }
