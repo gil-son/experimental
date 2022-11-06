@@ -1,8 +1,19 @@
 import FormEmail from 'components/Form';
+import Network from 'components/Network';
 
 const Contacts = () => {
   return <>
-    <FormEmail/>
+    <div className="container mt-5 shadow">
+      
+      <div className="row">
+        <div className="col-sm">
+          <FormEmail />
+        </div>
+        <div className="col-sm">
+          <Network />
+        </div>
+      </div>
+    </div>
   </>;
 };
 
