@@ -1,8 +1,27 @@
+ @media (max-width: 3000px) {
+     #blo {
+         width: 327px;
+         height: 155px;
+         background-color: #050227;
+         color: white;
+         position: absolute;
+         margin: 451px 0px 0px 76px;
+         text-align: center;
+     }
+ }
+
+
+
+
+
+
+
+
  @media (max-width: 1920px) {
      #blo {
          width: 327px;
          height: 152px;
-         background-color: #7ca1b1;
+         background-color: #050227;
          color: white;
          position: absolute;
          margin: 409px 0px 0px 71px;
@@ -11,27 +30,25 @@
  }
 
 
-
-
- @media (max-width: 1400px) {
-     #blo {
-         width: 328px;
-         height: 137px;
-         background-color: #7ca1b1;
-         color: white;
-         position: absolute;
-         margin: 530px 0px 0px 76px;
-         text-align: center;
-     }
- }
+ @media (max-width: 1440px) {
+    #blo {
+        width: 328px;
+        height: 154px;
+        background-color: #050227;
+        color: white;
+        position: absolute;
+        margin: 453px 0px 0px 76px;
+        text-align: center;
+    }
+}
 
 
 
  @media (max-width: 1280px) {
      #blo {
          width: 328px;
-         height: 137px;
-         background-color: #7ca1b1;
+         height: 139px;
+         background-color: #050227;
          color: white;
          position: absolute;
          margin: 445px 0px 0px 76px;
@@ -42,8 +59,8 @@
  @media (max-width: 1121px) {
      #blo {
          width: 328px;
-         height: 137px;
-         background-color: #7ca1b1;
+         height: 139px;
+         background-color: #050227;
          color: white;
          position: absolute;
          margin: 445px 0px 0px 76px;
@@ -58,11 +75,11 @@
 
      #blo {
          width: 333px;
-         height: 160px;
-         background-color: #7ca1b1;
+         height: 162px;
+         background-color: #050227;
          color: white;
          position: absolute;
-         margin: 408px 0px 0px 76px;
+         margin: 442px 0px 0px 76px;
          text-align: center;
      }
  }
@@ -72,8 +89,8 @@
 
      #blo {
          width: 335px;
-         height: 154px;
-         background-color: #7ca1b1;
+         height: 156px;
+         background-color: #050227;
          color: white;
          position: absolute;
          margin: 414px 0px 0px 74px;
@@ -87,8 +104,8 @@
 
      #blo {
          width: 335px;
-         height: 174px;
-         background-color: #7ca1b1;
+         height: 176px;
+         background-color: #050227;
          color: white;
          position: absolute;
          margin: 414px 0px 0px 27px;
@@ -105,11 +122,28 @@
 
      #blo {
          width: 300px;
-         height: 174px;
-         background-color: #7ca1b1;
+         height: 176px;
+         background-color: #050227;
          color: white;
          position: absolute;
          margin: 392px 0px 0px 0px;
          text-align: center;
      }
  }
+
+ @media (max-width: 320px) {
+
+    iframe {
+        width: 300px;
+    }
+
+    #blo {
+        width: 300px;
+        height: 176px;
+        background-color: #050227;
+        color: white;
+        position: absolute;
+        margin: 447px 0px 0px 0px;
+        text-align: center;
+    }
+}

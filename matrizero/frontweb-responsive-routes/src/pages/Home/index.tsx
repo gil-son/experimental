@@ -1,36 +1,57 @@
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
 import ButtonIcon from 'components/ButtonIcon';
-import GridExample from 'components/Card';
+
+import { GridExample, MultiCards } from 'components/Card';
+import RadarChartWorks from 'components/Progress/index';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <div className="base-card home-card">
-        <div className="home-content-container">
-          <div>
-            <h1>Conheça o melhor catálogo de cursos</h1>
-            <p>
-              Desenvolvemos os melhores cursos de Java disponíveis no
-              mercado. E, cada curso é sempre renovado!
-            </p>
+    <>
+      <div className="home-container">
+        <div className="base-card home-card">
+          <div className="home-content-container">
+            <div>
+              <h1>Conheça o melhor catálogo de cursos</h1>
+              <p>
+                Desenvolvemos os melhores cursos de Java disponíveis no
+                mercado. E, cada curso é sempre renovado!
+              </p>
+            </div>
+            <div>
+              <Link to="/products">
+                <ButtonIcon />
+              </Link>
+            </div>
           </div>
-          <div>
-            <Link to="/products">
-              <ButtonIcon />
-            </Link>
+          <div className="home-image-container">
+            <MainImage />
           </div>
-        </div>
-        <div className="home-image-container">
-          <MainImage />
         </div>
       </div>
-      <div className="base-card home-card mt-2">
+
+
+      <div className="container">
+        <div className="row mt-5">
+          < MultiCards />
+        </div>
+        <div className="row mt-5">
           <GridExample />
+        </div>
       </div>
-    </div>
+
+
+      <div className="home-container">
+        <div className="base-card home-card">
+          <div className="home-content-container">
+          <RadarChartWorks />
+          </div>
+        </div>
+      </div>
+
+    </>
   );
 };
 
