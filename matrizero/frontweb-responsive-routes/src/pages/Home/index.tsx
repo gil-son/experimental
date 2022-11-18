@@ -46,6 +46,14 @@ const Home = () => {
       <div className="home-container">
         <div className="base-card home-card">
           <div className="home-content-container">
+          
+            <h1>Estamos alinhados com o mercado Nacional e Internacional!!!</h1>
+              <p>
+                Em média os alunos que fizeram algum de nossos cursos tendem a trabalhar nesses locais/plataformas
+              </p>
+          
+          </div>
+          <div className="home-content-container">
           <RadarChartWorks />
           </div>
         </div>
