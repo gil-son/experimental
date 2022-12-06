@@ -26,11 +26,11 @@ function FormEmail() {
         
         
 
-        if(name.length > 1){count++;}else{setMessageName(true); setTimeout( () => {setMessageName(false)},5000);}
-        if(email.length > 7 && email.includes("@")){count++;}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},5000);}
-        if(phone.length > 6){count++;}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},5000);}
-        if(subject.length > 4){count++;}else{setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},5000);}
-        if(message.length > 1){count++;}else{setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},5000);}
+        if(name.length > 1){count++;}else{setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}
+        if(email.length > 7 && email.includes("@")){count++;}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
+        if(phone.length > 6){count++;}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
+        if(subject.length > 4){count++;}else{setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},10000);}
+        if(message.length > 1){count++;}else{setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}
 
         if(count == 5 && checkSend == true){setCheckSend(false)}
         console.log(count)
