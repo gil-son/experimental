@@ -1,4 +1,6 @@
-import React, { useState} from 'react';
+import {useState} from 'react';
+import {REACT_APP_BACKEND_URL} from '../../utils/request';
+
 
 function FormEmail() {
 
@@ -10,7 +12,6 @@ function FormEmail() {
     let [ subject, setSubject] = useState("");
     let [ message, setMessage] = useState("");
 
-    let [ checkbox, setCheckbox] = useState(false);
     let [ checkSend, setCheckSend] = useState(true);
 
 
@@ -62,10 +63,10 @@ function FormEmail() {
                 <textarea name="message" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva o assunto"  value={message} onMouseLeave={verify} onChange={(event) => setMessage(event.target.value)} required></textarea>
             </div>
             <div>
-
+            
             </div>
             <div className="form-group mt-2  shadow " onMouseLeave={verify}>
-            <input type="hidden" name="redirectTo" value="http://localhost:3000"></input>
+            <input type="hidden" name="redirectTo" value={REACT_APP_BACKEND_URL}></input>
             <div className="form-check">
             <input className="form-check-input" type="checkbox" id="flexCheckDefault" onClick={verify} required/>
             <label className="form-check-label" for="flexCheckDefault">
