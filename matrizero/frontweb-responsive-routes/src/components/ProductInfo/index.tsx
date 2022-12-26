@@ -1,13 +1,11 @@
 import './styles.css';
 
-const ProductPrice = () => {
-
+export function ProductInfo(props: { price: string}) {
     return (
         <div className="product-price-container">
             <span>R$</span>
-            <h3>0.0</h3>
+            {props.price}
         </div>
     );
 }
 
-export default ProductPrice;

@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {REACT_APP_BACKEND_URL} from '../../utils/request';
+import {REACT_APP} from '../../utils/request';
 
 
 function FormEmail() {
@@ -66,7 +66,7 @@ function FormEmail() {
             
             </div>
             <div className="form-group mt-2  shadow " onMouseLeave={verify}>
-            <input type="hidden" name="redirectTo" value={REACT_APP_BACKEND_URL}></input>
+            <input type="hidden" name="redirectTo" value={REACT_APP}></input>
             <div className="form-check">
             <input className="form-check-input" type="checkbox" id="flexCheckDefault" onClick={verify} required/>
             <label className="form-check-label" for="flexCheckDefault">
