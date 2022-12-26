@@ -2,18 +2,43 @@
     {
         "id":1,
         "name":"Aaa",
+        "free": false,
         "price":"1",
         "link":"l1"
     },
     {
         "id":2,
         "name":"Bbb",
+        "free": false,
         "price":"2",
-        "link":"l2"},
+        "link":"l2"
+    },
     {
         "id":3,
         "name":"Ccc",
+        "free": false,
         "price":"3",
+        "link":"l3"
+    },
+    {
+        "id":4,
+        "name":"Ddd",
+        "free": true,
+        "price":"0",
+        "link":"l1"
+    },
+    {
+        "id":5,
+        "name":"Eee",
+        "free": true,
+        "price":"0",
+        "link":"l2"
+    },
+    {
+        "id":6,
+        "name":"Ccc",
+        "free": true,
+        "price":"0",
         "link":"l3"
     }
 ]
