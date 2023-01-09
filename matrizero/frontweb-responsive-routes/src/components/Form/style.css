@@ -1,0 +1,17 @@
+.form-group input{
+    background-color: white;
+}
+
+.form-group textarea{
+    background-color: white;
+}
+
+.send-ok{
+    background-color: #adcdfd;
+}
+
+
+.send-error{
+    background-color: #230739;
+    color: white;
+}

@@ -16,7 +16,7 @@ const Home = () => {
             <div>
               <h1>Conheça o melhor catálogo de cursos</h1>
               <p>
-                Desenvolvemos os melhores cursos de Java disponíveis no
+                Desenvolvemos cursos com situações do dia a dia de alguém que já está no
                 mercado. E, cada curso é sempre renovado!
               </p>
             </div>
