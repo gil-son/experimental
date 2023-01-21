@@ -1,11 +1,30 @@
 import './styles.css';
 import 'bootstrap/js/src/collapse.js';
-
+import {useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { changeStyle } from 'redux/slice';
+
 
 const Navbar = () => {
+
+  let [ style, setStyle] = useState("primary");
+  let dispatch = useDispatch();
+
+  
+  const handleStyle2 = () => {
+    setStyle("secondary")
+    //console.log(dispatch(changeStyle(style)))
+    console.log(dispatch(changeStyle(style)).payload)
+  }
+
+  const handleStyle1 = () => {
+    setStyle("primary")
+    console.log(dispatch(changeStyle(style)).payload)
+  }
+
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-primary main-nav">
+    <nav className={`navbar navbar-expand-md navbar-dark bg-${style} main-nav`}>
       <div className="container-fluid">
         {' '}
         {/* previne quebra de linha entre logo e itens */}
@@ -39,6 +58,10 @@ const Navbar = () => {
               <NavLink to="/contacts" activeClassName="active">
                 CONTATOS
               </NavLink>
+            </li>
+            <li>
+              <button onClick={handleStyle2}>light</button>
+              <button onClick={handleStyle1}>dark</button>
             </li>
           </ul>
         </div>

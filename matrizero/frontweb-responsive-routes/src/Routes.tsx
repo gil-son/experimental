@@ -6,7 +6,7 @@ import Contacts from 'pages/Contacts';
 
 const Routes = () => (
   <BrowserRouter>
-    <Navbar />
+    <Navbar the-color/>
     <Switch>
       <Route path="/" exact>
         <Home />
