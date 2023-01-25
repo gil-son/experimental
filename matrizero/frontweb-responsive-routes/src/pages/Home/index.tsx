@@ -5,12 +5,31 @@ import { GridExample, MultiCards } from 'components/Card';
 import RadarChartWorks from 'components/Progress/index';
 import { Link } from 'react-router-dom';
 
+import {useState} from 'react';
+import { useSelector } from 'react-redux';
+
 import './styles.css';
 
 const Home = () => {
+
+  let state = useSelector( state => state);
+  console.log("...")
+  console.log(state);
+
+  
+
+  let [ style, setStyle] = useState("secondary");
+  
+  var verify =  JSON.stringify(state);
+  
+  const obj = JSON.parse(verify)
+  console.log("..", obj.mystyle.style);
+  
+  style = obj.mystyle.style;
+
   return (
     <>
-      <div className="home-container">
+      <div className={`home-container bg-${style}`}>
         <div className="base-card home-card">
           <div className="home-content-container">
             <div>
@@ -33,7 +52,7 @@ const Home = () => {
       </div>
 
 
-      <div className="container">
+      <div className="container ">
         <div className="row mt-5">
           < MultiCards />
         </div>
@@ -43,7 +62,7 @@ const Home = () => {
       </div>
 
 
-      <div className="home-container">
+      <div className="home-container bg-secondary">
         <div className="base-card home-card">
           <div className="home-content-container">
           
