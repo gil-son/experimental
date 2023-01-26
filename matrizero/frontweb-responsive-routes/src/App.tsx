@@ -7,8 +7,17 @@ import Routes from 'Routes';
 
 function App() {
 
+  let state = useSelector( state => state);
+
+  let [ style, setStyle] = useState("secondary");
+  var verify =  JSON.stringify(state);
+  const obj = JSON.parse(verify)
+  style = obj.mystyle.style;
+
   return (
+    <div className={`bg-${style}`}>
     <Routes />
+    </div>
   );
 }
 

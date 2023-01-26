@@ -87,7 +87,7 @@ function FormEmail() {
             <div>
             
             </div>
-            <div className="form-group mt-2  shadow " onMouseLeave={verify} onMouseMove={verify}>
+            <div className="form-group mt-2" onMouseLeave={verify} onMouseMove={verify}>
             <input type="hidden" name="redirectTo" value={REACT_APP}></input>
             <div className="form-check">
             <input className="form-check-input" type="checkbox" id="flexCheckDefault" onClick={validate} required/>

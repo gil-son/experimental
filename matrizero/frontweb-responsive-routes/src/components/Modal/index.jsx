@@ -11,7 +11,7 @@ function ModalNotification() {
   
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="secondary" onClick={handleShow}>
         QUERO RECEBER E-MAILS COM NOVIDADES
       </Button>
 

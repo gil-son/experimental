@@ -1,6 +1,7 @@
 .main-nav {
   padding-left: 40px;
   min-height: 70px;
+  background: linear-gradient(to right, #230739, #77a4fe)!important;
 }
 
 .nav-logo-text {

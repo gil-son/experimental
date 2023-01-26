@@ -5,7 +5,7 @@ import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
 const ButtonIcon = () => {
   return (
     <div className="btn-container">
-      <button className="btn btn-primary">
+      <button className="btn btn-secondary">
         <h6>Inicie agora a sua busca</h6>
       </button>
       <div className="btn-icon-container">

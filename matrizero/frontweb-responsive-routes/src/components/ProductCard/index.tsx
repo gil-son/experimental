@@ -1,6 +1,5 @@
 import './styles.css';
 import {useState} from 'react';
-//import ProductImg from 'assets/images/gil.png';
 import { ProductInfo } from 'components/ProductInfo';
 import Static_Api from './../../utils/static_api.json';
 
@@ -18,8 +17,8 @@ const ProductCard = () => {
     let [ show, setShow] = useState("");
 
 
-    let no_active = "btn btn-outline-primary w-25 my-effect-select-button";
-    let active = "btn btn-outline-primary w-25 my-effect-select-button active";
+    let no_active = "btn btn-outline-secondary my-effect-select-button w-25";
+    let active = "btn btn-outline-secondary w-25 my-effect-border active";
 
     let [ button1, setButton1] = useState(no_active);
     let [ button2, setButton2] = useState(no_active);

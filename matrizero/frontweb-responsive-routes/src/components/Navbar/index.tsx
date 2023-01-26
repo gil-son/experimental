@@ -4,27 +4,31 @@ import {useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { changeStyle } from 'redux/slice';
-
+import Moon from './../../assets/images/moon.png';
 
 const Navbar = () => {
 
-  let [ style, setStyle] = useState("primary");
+  let [ style, setStyle] = useState("secondary");
+  let [ count, setCount] = useState(0);
   let dispatch = useDispatch();
-
   
-  const handleStyle2 = () => {
-    setStyle("secondary")
-    //console.log(dispatch(changeStyle(style)))
-    console.log(dispatch(changeStyle(style)).payload)
-  }
-
-  const handleStyle1 = () => {
-    setStyle("primary")
-    console.log(dispatch(changeStyle(style)).payload)
+  
+  const handleStyle = () => {
+    if(count % 2 == 0){
+      setStyle("secondary")
+      console.log(dispatch(changeStyle(style)).payload)
+      setCount(count+1)
+    }
+    if(count % 2 == 1){
+      setStyle("primary")
+      console.log(dispatch(changeStyle(style)).payload)
+      setCount(count+1)
+    }
+    
   }
 
   return (
-    <nav className={`navbar navbar-expand-md navbar-dark bg-${style} main-nav`}>
+    <nav className={`navbar navbar-expand-md navbar-dark main-nav border border-white rounded`}>
       <div className="container-fluid">
         {' '}
         {/* previne quebra de linha entre logo e itens */}
@@ -60,8 +64,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <button onClick={handleStyle2}>light</button>
-              <button onClick={handleStyle1}>dark</button>
+              <img style={{width: '100%', cursor: 'pointer'}} src={Moon} onClick={handleStyle} alt="Card image cap" />
             </li>
           </ul>
         </div>

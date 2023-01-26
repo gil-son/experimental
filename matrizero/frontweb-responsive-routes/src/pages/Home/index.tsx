@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <>
-      <div className={`home-container bg-${style}`}>
+      <div className={`home-container`}>
         <div className="base-card home-card">
           <div className="home-content-container">
             <div>
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </div>
 
-
+      <div className={`home-container`}>
       <div className="container ">
         <div className="row mt-5">
           < MultiCards />
@@ -59,10 +59,11 @@ const Home = () => {
         <div className="row mt-5">
           <GridExample />
         </div>
+        </div>
       </div>
 
 
-      <div className="home-container bg-secondary">
+      <div className={`home-container`}>
         <div className="base-card home-card">
           <div className="home-content-container">
           
