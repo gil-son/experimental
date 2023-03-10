@@ -1,3 +1,14 @@
+ 
+ .my-effect{
+    border: 1px inset white !important;
+    background: linear-gradient(to right, #230739, #77a4fe)!important;
+  }
+ 
+ 
+ 
+ 
+ 
+ 
  @media (max-width: 3000px) {
      #blo {
          width: 327px;
@@ -9,12 +20,6 @@
          text-align: center;
      }
  }
-
-
-
-
-
-
 
 
  @media (max-width: 1920px) {

@@ -95,7 +95,7 @@ function FormEmail() {
                 Estou ciente do envio do e-mail e em até 1 dias útil serei respondido
             </label>
 </div>
-            <button type="submit" className="btn btn-outline-primary w-100" disabled={checkSend} onClick={waitSecond}>Enviar</button>
+            <button type="submit" className="btn btn-outline-primary my-effect w-100" disabled={checkSend} onClick={waitSecond}>Enviar</button>
             </div>
             
                         {

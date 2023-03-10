@@ -15,3 +15,9 @@
     background-color: #230739;
     color: white;
 }
+
+ 
+.my-effect{
+    border: 1px inset white !important;
+    background: linear-gradient(to right, #230739, #77a4fe)!important;
+  }
