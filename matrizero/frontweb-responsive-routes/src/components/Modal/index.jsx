@@ -14,12 +14,50 @@ function ModalNotification() {
   const [telefone, setTelefone] = useState('');
   const [confirma, setConfirma] = useState(false);
 
-  let [ messageName, setMessageName] = useState(false);
 
-  let [ checkSend, setCheckSend] = useState(true);
+  let [ messageName, setMessageName] = useState(false);
+  let [ messageEmail, setMessageEmail] = useState(false);
+  let [ messagePhone, setMessagePhone] = useState(false);
+
+  let [ messageAgradece, setessageAgradece] = useState(false);
+
+  let [ checkBlockSend, setCheckBlockSend] = useState(true);
 
   const history = useHistory();
+
+function verify(){
+        
+  console.log("verify")
+
+  if(nome.length > 1){}else{setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}
+        if(email.length > 7 && email.includes("@")){}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
+        if(telefone.length > 7){}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   
+
+        if(nome.length > 1 && email.length > 7 && email.includes("@") && telefone.length > 7){
+          setCheckBlockSend(false)
+        }else{
+          setCheckBlockSend(true)
+          let v = document.getElementById("exampleCheck1").value = false
+          document.getElementById("exampleCheck1").checked = false
+          console.log(v)
+        }
+
+        
+
+}
+
+  function verifySimples(){
+
+    if(nome.length < 4 || email.length < 8 || telefone.length < 8){
+      setCheckBlockSend(true)
+      document.getElementById("exampleCheck1").checked = false
+    }
+  }
+
+
+
+
 function handleSubmit(event) {
       event.preventDefault();
   
@@ -49,18 +87,28 @@ function handleSubmit(event) {
   
   function handleNomeChange(event) {
       setNome(event.target.value);
+      verifySimples()
   }
   
   function handleEmailChange(event) {
       setEmail(event.target.value);
+      verifySimples()
   }
 
   function handleTelefoneChange(event) {
       setTelefone(event.target.value);
+      verifySimples()
   }
 
   function handleConfirmaChange() {
-      setConfirma(true);
+    
+  if(document.getElementById("exampleCheck1").checked==true){
+    setConfirma(true);
+    verify()
+  }else{
+    setCheckBlockSend(true)
+  }
+      
   }
 
   return (
@@ -74,6 +122,7 @@ function handleSubmit(event) {
           <Modal.Title>Sobre a proteção da LGPD</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          
         <form onSubmit={handleSubmit}>
           
           <div class="form-group">
@@ -96,10 +145,21 @@ function handleSubmit(event) {
             <input value={confirma} type="checkbox" onChange={handleConfirmaChange} class="form-check-input" id="exampleCheck1" required/>
             <label class="form-check-label" for="exampleCheck1">As informações estão protegidas conforme a LGPD n° 13.709/2018  </label>
           </div>
-            <button type="submit" class="btn btn-primary mt-2 my-effect w-100" disabled={checkSend} >Enviar</button>
+          
+            <button type="submit" class="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>Enviar</button>
             {
-                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Agradecemos !!!</div>
+                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O nome precisa ter o mínimo de 3 caracteres</div>
             }
+            {
+                            messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o e-mail</div>
+            }
+            {
+                            messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o número de telefone</div>
+            }
+            {
+                            messageAgradece && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Agradecemos !!!</div>
+            }
+            <small>Preencha os Campos de forma adquada para habilitar o botao Enviar</small>
         </form>
         </Modal.Body>
         <Modal.Footer>
