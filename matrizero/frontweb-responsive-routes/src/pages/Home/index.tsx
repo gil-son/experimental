@@ -36,7 +36,7 @@ const Home = () => {
               <h1>Conheça o melhor catálogo de cursos</h1>
               <p>
                 Desenvolvemos cursos com situações do dia a dia de alguém que já está no
-                mercado. E, cada curso é sempre renovado!
+                mercado. E, cada curso é sempre renovado! Estudo individual ou em grupo!
               </p>
             </div>
             <div>
