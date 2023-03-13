@@ -4,7 +4,7 @@ import {useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { changeStyle } from 'redux/slice';
-import Moon from './../../assets/images/moon.png';
+import OnOff from './../../assets/images/on-off.png';
 
 const Navbar = () => {
 
@@ -64,7 +64,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <img style={{width: '100%', cursor: 'pointer'}} src={Moon} onClick={handleStyle} alt="Card image cap" />
+              <img style={{ cursor: 'pointer'}} src={OnOff} onClick={handleStyle} alt="Card image cap" />
             </li>
           </ul>
         </div>

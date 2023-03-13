@@ -18,7 +18,7 @@ export const RadarChartWorks = () => {
       ],
       datasets: [
           {
-              label: '% DE ALUNOS NACIONAIS TENDEM A TRABALHAR EM',
+              label: '% DE ALUNOS NACIONAIS TRABALHAM EM',
               data: nacional,
               backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(14, 102, 135, 0.2)'
 
@@ -29,7 +29,7 @@ export const RadarChartWorks = () => {
               ]
           },
           {
-            label: '% DE ALUNOS INTERNACIONAIS TENDEM A TRABALHAR EM',
+            label: '% DE ALUNOS INTERNACIONAIS TRABALHAM EM',
             data: internacional,
             backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(44, 82, 235, 0.2)'
 
