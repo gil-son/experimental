@@ -1,4 +1,4 @@
-import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
+import ImgCourse from '../../assets/images/remote.png';
 import ButtonIcon from 'components/ButtonIcon';
 
 import { GridExample, MultiCards } from 'components/Card';
@@ -46,7 +46,7 @@ const Home = () => {
             </div>
           </div>
           <div className="home-image-container">
-            
+            <img src={ImgCourse}/>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ const Home = () => {
               </p>
           
           </div>
-          <div className="home-content-container">
+          <div className="home-content-container chart">
           <RadarChartWorks />
           </div>
         </div>

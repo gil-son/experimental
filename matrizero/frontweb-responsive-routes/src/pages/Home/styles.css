@@ -34,9 +34,13 @@
   padding: 50px 15px;
 }
 
-.home-image-container svg {
+.home-image-container img {
   width: 100%;
   height: auto;
+}
+
+.home-container .chart{
+  width: 500px;
 }
 
 @media (min-width: 576px) {
@@ -55,7 +59,7 @@
     margin-bottom: 20px;
   }
 
-  .home-image-container svg {
+  .home-image-container img {
     width: 506px;
   }
 }
@@ -118,13 +122,14 @@
     padding: 20px;
   }
 
-  .home-image-container svg {
+  .home-image-container img {
     width: 100%;
   }
 }
 
+
 @media (min-width: 1400px) {
-  .home-image-container svg {
+  .home-image-container img {
     width: 480px;
   }
 }
