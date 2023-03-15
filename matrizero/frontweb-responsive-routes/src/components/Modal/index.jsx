@@ -27,23 +27,19 @@ function ModalNotification() {
 
 function verify(){
         
-  console.log("verify")
-
-  if(nome.length > 1){}else{setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}
-        if(email.length > 7 && email.includes("@")){}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
-        if(telefone.length > 7){}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
+  if(nome.length < 4){console.log("nome menor que 4", nome.length);  setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", nome.length)}
+  if(email.length > 7 && email.includes("@")){}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
+  if(telefone.length > 7){}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   
 
-        if(nome.length > 1 && email.length > 7 && email.includes("@") && telefone.length > 7){
+  if(nome.length > 1 && email.length > 7 && email.includes("@") && telefone.length > 7){
+          console.log("segundo 2")
           setCheckBlockSend(false)
-        }else{
+  }else{
           setCheckBlockSend(true)
           let v = document.getElementById("exampleCheck1").value = false
           document.getElementById("exampleCheck1").checked = false
-          console.log(v)
-        }
-
-        
+   }
 
 }
 
@@ -60,7 +56,7 @@ function verify(){
 
 function handleSubmit(event) {
       event.preventDefault();
-  
+
       // Enviar dados para o SheetDB API usando fetch
       const url = 'https://sheetdb.io/api/v1/li2m6i21d3vnw';
       const data = { nome, email, telefone, confirma };
@@ -80,7 +76,7 @@ function handleSubmit(event) {
           console.error(error);
         });
 
-        setMessageName(true);
+        setessageAgradece(true);
 
         setTimeout( () => {handleClose()},3000);
   }

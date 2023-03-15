@@ -1,6 +1,5 @@
 import './styles.css';
-import ImgArrow from '../../assets/images/right-arrow.png';
-import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
+import ImgCourse from '../../assets/images/right-arrow.png';
 
 const ButtonIcon = () => {
   return (
@@ -9,7 +8,7 @@ const ButtonIcon = () => {
         <h6>Inicie agora a sua busca</h6>
       </button>
       <div className="btn-icon-container">
-        <img src={ImgArrow}/>
+        <img src={ImgCourse}/>
       </div>
     </div>
   );

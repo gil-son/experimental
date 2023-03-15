@@ -7,7 +7,7 @@
         "link":"https://www.youtube.com/channel/UCMa16OB5qr0qezTRJUBzWlQ",
         "image":"https://thumbs2.imgbox.com/36/54/zqJnAsaK_t.jpg",
         "matrizero":true,
-        "info": "Curso com foco em especialização em Apache Camel. Conceitos e práticas de arquiteturas EIP, REST API, Filas, organização de rotas e dados (JSON, XML, CSV, etc)!"
+        "info": "Especialização em Apache Camel. Conceitos e práticas de arquiteturas EIP, REST API, Filas, organização de rotas e dados (JSON, XML, CSV, etc)! Testes Unitários e+"
     },
     {
         "id":2,
@@ -17,7 +17,7 @@
         "link":"https://go.hotmart.com/L77668667A?dp=1",
         "image":"https://static-media.hotmart.com/4XBR2tuKUh5oqryIc2Z8aQ7goGs=/295x165/smart/filters:quality(100)/hotmart/product_pictures/a3fa439a-f037-4a26-b5ef-904987d02949/LogoCursoScrumHotmart.jpg",
         "matrizero":false,
-        "info": "desenvolvido para profissionais que desejam exercer um papel de liderança de projetos e produtos, seja como  Scrum Master ou como Gerentes de Projeto em transição!"
+        "info": "Desenvolvido para profissionais que desejam exercer um papel de liderança de projetos e produtos, seja como  Scrum Master ou como Gerentes de Projeto em transição! Indicado também para Devs!"
     },
     {
         "id":3,
@@ -27,7 +27,7 @@
         "link":"https://go.hotmart.com/H77702947T?dp=1",
         "image":"https://static-media.hotmart.com/IBs7kcc32Wo6h1xis7qRYtOcP8M=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/b1d4616b-18d1-4181-9efe-d426d096940d/PROJETOCURSODESENVOLVEDORFULLSTACKTURBO.jpg?w=920",
         "matrizero":false,
-        "info": "abrange conceitos necessários como HTML, CSS, JavaScript, SQL... até mais avançados como React JS, Node JS, NoSQL, Autenticação e Segurança!"
+        "info": "Um curso Full Stack completo! Abrange conceitos necessários como HTML, CSS, JavaScript, SQL... até mais avançados como React JS, Node JS, NoSQL, etc. Validações, Autenticações e Segurança!"
     },
     {
         "id":4,
@@ -37,6 +37,6 @@
         "link":"https://www.youtube.com/channel/UCMa16OB5qr0qezTRJUBzWlQ",
         "image":"https://cdn.pixabay.com/photo/2014/05/10/19/23/presentation-341444_1280.png",
         "matrizero":true,
-        "info": "Curso com foco em conceitos iniciais em Apache Camel. Conceitos e práticas de rotas de arquivos e REST API. Em um projeto para conhecer e se desenvolver!"
+        "info": "Curso com foco em conceitos iniciais em Apache Camel. Conceitos e práticas de rotas de arquivos e REST API. Criação de um projeto para conhecer e se desenvolver!"
     }
 ]

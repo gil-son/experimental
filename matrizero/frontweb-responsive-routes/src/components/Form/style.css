@@ -21,3 +21,13 @@
     border: 1px inset white !important;
     background: linear-gradient(to right, #230739, #77a4fe)!important;
   }
+
+textarea{
+    resize: none;
+}
+
+label, small{
+    
+    text-shadow: 2px 2px #cbe5ec;
+   
+}

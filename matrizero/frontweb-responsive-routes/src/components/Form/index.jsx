@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {REACT_APP} from '../../utils/request';
+import { useHistory } from 'react-router-dom';
 import './style.css';
 
 function FormEmail() {
@@ -11,10 +11,11 @@ function FormEmail() {
     let [ phone, setPhone] = useState("");
     let [ subject, setSubject] = useState("");
     let [ message, setMessage] = useState("");
-    let [ theCheckbox, setTheCheckbox] = useState(false);
-    
+    let [confirm, setConfirm] = useState(false);
 
-    let [ checkSend, setCheckSend] = useState(true);
+
+  let [ checkBlockSend, setCheckBlockSend] = useState(true);
+    
 
 
     let [ messageName, setMessageName] = useState(false);
@@ -22,80 +23,148 @@ function FormEmail() {
     let [ messagePhone, setMessagePhone] = useState(false);
     let [ messageSubject, setMessageSubject] = useState(false);
     let [ messageMessage, setMessageMessage] = useState(false);
+
+
     let [ messageSending, setMessageSending] = useState(false);
 
-    let [ count, setCount] = useState(false);
+    const history = useHistory();
 
-    function verify(){
+function verify(){
         
+  if(name.length < 4){console.log("nome menor que 4", name.length);  setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", name.length)}
+  if(email.length > 7 && email.includes("@")){}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
+  if(phone.length > 7){}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
+  if(subject.length < 4){console.log("subject menor que 4", subject.length);  setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},10000);}else{console.log("nome maior ou igual a 4", subject.length)}
+  if(message.length < 10){console.log("message menor que 10", message.length);  setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}else{console.log("nome maior ou igual a 4", message.length)}
 
-        if(name.length > 1){count++;}else{setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}
-        if(email.length > 7 && email.includes("@")){count++;}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
-        if(phone.length > 7){count++;}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
-        if(subject.length > 4){count++;}else{setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},10000);}
-        if(message.length > 1){count++;}else{setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}
 
-        if(count == 5 && checkSend == true){setCheckSend(false)}
-        console.log(count)
-        count=0;
+  if(name.length > 1 && email.length > 7 && email.includes("@") && phone.length > 7 && subject.length > 3 && message.length > 9){
+          console.log("segundo 2")
+          setCheckBlockSend(false)
+  }else{
+          setCheckBlockSend(true)
+          let v = document.getElementById("exampleCheck1").value = false
+          document.getElementById("exampleCheck1").checked = false
+   }
+
+}
+
+  function verifySimples(){
+
+    if(name.length < 4 || email.length < 8 || phone.length < 8 || subject.length < 4 || message.length < 10){
+      setCheckBlockSend(true)
+      document.getElementById("exampleCheck1").checked = false
     }
+  }
 
-    function verifyCheckBox(){
-        
-        if(theCheckbox == true){setTheCheckbox(false)}else{setTheCheckbox(true)}
-        console.log("theCheckbox", theCheckbox)
-    }
 
-    function validate(){
-        verifyCheckBox();
-        verify();
-    }
-    
-    function waitSecond(){
-        
-        if(theCheckbox){
+
+
+function handleSubmit(event) {
+      event.preventDefault();
+
+      // Enviar dados para o SheetDB API usando fetch
+      const url = 'https://sheetdb.io/api/v1/v89vx00xbrigs';
+      const data = { name, email, phone, subject, message, confirm };
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(() => {
+            
             setMessageSending(true)
-            setTimeout( () => {setMessageSending(false)},10000);
-        }
+            // Se o envio dos dados for bem-sucedido, redirecionar o usuário para outra página
+            setTimeout( () => {history.push('/');},10000);
+          
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
+        
+  }
+  
+    function handleNomeChange(event) {
+        setName(event.target.value);
+        verifySimples()
     }
     
-   // https://stackoverflow.com/questions/48213137/when-a-user-click-on-a-submit-button-how-to-wait-1-second-before-activating-it
-   // https://github.com/re-ciclo/re-ciclo/blob/master/frontend/src/components/Form/index.jsx 
+    function handleEmailChange(event) {
+        setEmail(event.target.value);
+        verifySimples()
+    }
+
+    function handlePhoneChange(event) {
+        setPhone(event.target.value);
+        verifySimples()
+    }
+
+    function handleSubjectChange(event) {
+        setSubject(event.target.value);
+        verifySimples()
+    }
+
+    function handleMessageChange(event) {
+        setMessage(event.target.value);
+        verifySimples()
+    }
+
+    
+
+    function handleConfirmChange() {
+        
+    if(document.getElementById("exampleCheck1").checked==true){
+        setConfirm(true);
+        verify()
+    }else{
+        setCheckBlockSend(true)
+    }
+        
+    }
    
    return (
         <>
-        <form action="https://api.staticforms.xyz/submit" method="post">
-            <input type="hidden" name="accessKey" value="647095ca-9257-41dd-9368-63a1bdbb1629"/>
-            <input type="hidden" name="replyTo" value="matrizero.dev@gmail.com" />
+        <form onSubmit={handleSubmit}>
+          
+          <div class="form-group">
+            <label for="exampleInputNome1">Nome Completo</label>
+            <input value={name} onChange={handleNomeChange} type="name" class="form-control" id="exampleInputNome1" aria-describedby="nomeHelp" placeholder="O seu nome completo"/>
+          </div>
 
-            <div className="form-group">
-                
-                <input type="text" name="name" className="form-control" id="nomeid" aria-describedby="nomeHelp" placeholder="Digite o seu Nome"  value={name}  onChange={(event) => setName(event.target.value)} required />
+          <div class="form-group mt-2">
+            <label for="exampleInputEmail1">E-mail</label>
+            <input value={email} type="email" onChange={handleEmailChange} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="O seu melhor e-mail"/>
+          </div>
+          
+          
+          <div class="form-group mt-2">
+            <label for="exampleInputTelefone1">Celular</label>
+            <input value={phone} type="phone" onChange={handlePhoneChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="O seu celular com DDD"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="exampleInputTelefone1">Assunto</label>
+            <input value={subject} type="phone" onChange={handleSubjectChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="Informe o assunto"/>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputNome1">Mensagem</label>
+          
+            <textarea class="form-control" value={message} onChange={handleMessageChange} type="text" maxlength="150" rows="4" cols="50" placeholder="A sua mensagem">
+            </textarea>
             </div>
-            <div className="form-group">
-                <input type="email" name="email" className="form-control" id="emailid" aria-describedby="emailHelp" placeholder="Digite o seu e-mail" value={email}  onChange={(event) => setEmail(event.target.value)} required />
-            </div>
-            <div className="form-group">
-                <input type="phone" name="phone" className="form-control" id="phoneid" aria-describedby="emailHelp" placeholder="Digite um número de contato" value={phone} onChange={(event) => setPhone(event.target.value)} required/>
-            </div>
-            <div className="form-group">
-                <input type="text" name="subject" className="form-control" id="exampleInputPassword1" placeholder="Digite o Assunto" value={subject}  onChange={(event) => setSubject(event.target.value)} required/>
-            </div>
-            <div className="form-group">
-                <textarea name="message" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva o assunto"  value={message} onMouseLeave={verify} onChange={(event) => setMessage(event.target.value)} required></textarea>
-            </div>
+
+
+          <div class="form-check mt-2">
+            <input value={confirm} type="checkbox" onChange={handleConfirmChange} class="form-check-input" id="exampleCheck1" required/>
+            <label class="form-check-label" for="exampleCheck1">Proteção conforme a LGPD n° 13.709/2018  </label>
+          </div>
             <div>
-            
-            </div>
-            <div className="form-group mt-2" onMouseLeave={verify} onMouseMove={verify}>
-            <input type="hidden" name="redirectTo" value={REACT_APP}></input>
-            <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="flexCheckDefault" onClick={validate} required/>
-            <label className="form-check-label" for="flexCheckDefault">
-                Estou ciente do envio do e-mail e em até 1 dias útil serei respondido
-            </label>
-</div>
-            <button type="submit" className="btn btn-outline-primary my-effect w-100" disabled={checkSend} onClick={waitSecond}>Enviar</button>
+            <button type="submit" class="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>Enviar</button>
             </div>
             
                         {
@@ -110,12 +179,14 @@ function FormEmail() {
                         {
                             messageSubject && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O Assunto precisa ter o mínimo de 5 caracteres</div>
                         }
+                        
                         {
-                            messageMessage && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A mensagem precisa ter o mínimo de 10 caracteres</div>
+                            messageMessage && <div className="d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A mensagem precisa ter ao menos 10 caracteres!</div>
                         }
                         {
-                            messageSending && <div className=" d-flex alert alert-success border border-primary mx-auto my-4 w-100 justify-content-around send-ok shadow" role="alert">Sucesso!</div>
+                            messageSending && <div className=" d-flex alert alert-success border border-primary mx-auto my-4 w-100 justify-content-around send-ok shadow" role="alert">Sucesso! Respondemos em até um dia últil!</div>
                         }
+                        <small>Preencha os campos de forma adquada para habilitar o botão Enviar</small>
         </form>
         </>
     );
