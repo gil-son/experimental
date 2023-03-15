@@ -27,12 +27,12 @@ function ModalNotification() {
 
 function verify(){
         
-  if(nome.length < 4){console.log("nome menor que 4", nome.length);  setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", nome.length)}
-  if(email.length > 7 && email.includes("@")){}else{setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
-  if(telefone.length > 7){}else{setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
+  if(nome.length < 3){setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", nome.length)}
+  if(email.length <8 || !email.includes("@")){setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
+  if(telefone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   
 
-  if(nome.length > 1 && email.length > 7 && email.includes("@") && telefone.length > 7){
+  if(nome.length > 2 && email.length > 7 && email.includes("@") && telefone.length > 10){
           console.log("segundo 2")
           setCheckBlockSend(false)
   }else{
