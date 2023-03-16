@@ -25,6 +25,26 @@ function ModalNotification() {
 
   const history = useHistory();
 
+  function handlePhoneNumberChange(event) {
+    const rawValue = event.target.value.replace(/\D/g, ''); // Remove todos os caracteres não-numéricos
+    let formattedValue = '';
+
+    if (rawValue.length > 0) {
+      formattedValue = `(${rawValue.slice(0, 2)})`; // Adiciona os parênteses para o DD
+
+      if (rawValue.length > 2) {
+        formattedValue += `${rawValue.slice(2, 7)}-`; // Adiciona o hífen depois do quarto dígito
+      }
+
+      if (rawValue.length > 6) {
+        formattedValue += rawValue.slice(7, 11); // Adiciona o restante dos dígitos, limitando a 14 caracteres
+      }
+    }
+
+    setTelefone(formattedValue);
+  }
+  
+
 function verify(){
         
   if(nome.length < 3){setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", nome.length)}
@@ -92,8 +112,10 @@ function handleSubmit(event) {
   }
 
   function handleTelefoneChange(event) {
+      
       setTelefone(event.target.value);
       verifySimples()
+      handlePhoneNumberChange(event)
   }
 
   function handleConfirmaChange() {

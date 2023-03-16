@@ -29,6 +29,25 @@ function FormEmail() {
 
     const history = useHistory();
 
+    function handlePhoneNumberChange(event) {
+      const rawValue = event.target.value.replace(/\D/g, ''); // Remove todos os caracteres não-numéricos
+      let formattedValue = '';
+  
+      if (rawValue.length > 0) {
+        formattedValue = `(${rawValue.slice(0, 2)})`; // Adiciona os parênteses para o DD
+  
+        if (rawValue.length > 2) {
+          formattedValue += `${rawValue.slice(2, 7)}-`; // Adiciona o hífen depois do quarto dígito
+        }
+  
+        if (rawValue.length > 6) {
+          formattedValue += rawValue.slice(7, 11); // Adiciona o restante dos dígitos, limitando a 14 caracteres
+        }
+      }
+  
+      setPhone(formattedValue);
+    }
+
 function verify(){
         
   if(name.length < 3){console.log("nome maior que 3", name.length);  setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome menorr ou igual a 3", name.length)}
@@ -101,6 +120,7 @@ function handleSubmit(event) {
     function handlePhoneChange(event) {
         setPhone(event.target.value);
         verifySimples()
+        handlePhoneNumberChange(event)
     }
 
     function handleSubjectChange(event) {
