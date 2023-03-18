@@ -3,12 +3,16 @@ import ButtonIcon from 'components/ButtonIcon';
 
 import { GridExample, MultiCards } from 'components/Card';
 import RadarChartWorks from 'components/Progress/index';
+import Circle from '../../components/Animate';
 import { Link } from 'react-router-dom';
 
 import {useState} from 'react';
 import { useSelector } from 'react-redux';
 
 import './styles.css';
+
+
+
 
 const Home = () => {
 
@@ -33,6 +37,7 @@ const Home = () => {
         <div className="base-card home-card">
           <div className="home-content-container">
             <div>
+              <Circle />
               <h1>Conheça o melhor catálogo de cursos</h1>
               <p>
                 Desenvolvemos cursos com situações do dia a dia de alguém que já está no
