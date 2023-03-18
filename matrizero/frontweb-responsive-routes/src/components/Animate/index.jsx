@@ -10,7 +10,7 @@ const Circle = () => {
     }, []);
   
     return (
-        <svg className={`spin ${isVisible ? 'fade-in' : ''}`} style={{transformOrigin: 'center', position: 'absolute', top: 20, left: 185, zIndex: 9999, width: 130, height:130}}>
+        <svg className={`spin ${isVisible ? 'fade-in' : ''}`} style={{transformOrigin: 'center', position: 'absolute', top: 19, left: 200, zIndex: 9999, width: 140, height:140}}>
         <image href={Image} width="25%" height="25%" />
       </svg>
     );

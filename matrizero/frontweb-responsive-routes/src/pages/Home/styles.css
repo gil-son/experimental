@@ -43,6 +43,14 @@
   width: 500px;
 }
 
+@media (max-width: 425px) {
+  .home-container .chart{
+    width: 360px !important;
+    margin: 0 auto;
+  }
+}
+
+
 @media (max-width: 400px) {
   .home-content-container{
     width: 340px !important;
