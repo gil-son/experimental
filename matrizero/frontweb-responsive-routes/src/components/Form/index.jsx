@@ -50,14 +50,14 @@ function FormEmail() {
 
 function verify(){
         
-  if(name.length < 3){console.log("nome maior que 3", name.length);  setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome menorr ou igual a 3", name.length)}
+  if(name.length < 5){console.log("nome maior que 3", name.length);  setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome menorr ou igual a 3", name.length)}
   if(email.length < 8 || !email.includes("@")){setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
   if(phone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   if(subject.length < 5){setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},10000);}
   if(message.length < 10){console.log("message menor que 10", message.length);  setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}else{console.log("message maior ou igual a 4", message.length)}
 
 
-  if(name.length > 2 && email.length > 7 && email.includes("@") && phone.length > 10 && subject.length > 4 && message.length > 9){
+  if(name.length > 3 && email.length > 7 && email.includes("@") && phone.length > 13 && subject.length > 4 && message.length > 9){
           console.log("segundo 2")
           setCheckBlockSend(false)
   }else{
@@ -70,7 +70,7 @@ function verify(){
 
   function verifySimples(){
 
-    if(name.length < 4 || email.length < 8 || phone.length < 8 || subject.length < 4 || message.length < 10){
+    if(name.length < 4 || email.length < 10 || phone.length < 15 || subject.length < 4 || message.length < 10){
       setCheckBlockSend(true)
       document.getElementById("exampleCheck1").checked = false
     }
@@ -188,7 +188,7 @@ function handleSubmit(event) {
             </div>
             
                         {
-                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O nome precisa ter o mínimo de 3 caracteres</div>
+                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O Nome Completo está muito curto</div>
                         }
                         {
                             messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o e-mail</div>
@@ -201,7 +201,7 @@ function handleSubmit(event) {
                         }
                         
                         {
-                            messageMessage && <div className="d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A mensagem precisa ter ao menos 10 caracteres!</div>
+                            messageMessage && <div className="d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A mensagem está muito curta</div>
                         }
                         {
                             messageSending && <div className=" d-flex alert alert-success border border-primary mx-auto my-4 w-100 justify-content-around send-ok shadow" role="alert">Sucesso! Respondemos em até um dia últil!</div>

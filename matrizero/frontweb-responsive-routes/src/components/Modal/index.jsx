@@ -47,12 +47,12 @@ function ModalNotification() {
 
 function verify(){
         
-  if(nome.length < 3){setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", nome.length)}
+  if(nome.length < 5){setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", nome.length)}
   if(email.length <8 || !email.includes("@")){setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
   if(telefone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   
 
-  if(nome.length > 2 && email.length > 7 && email.includes("@") && telefone.length > 10){
+  if(nome.length > 3 && email.length > 9 && email.includes("@") && telefone.length > 13){
           console.log("segundo 2")
           setCheckBlockSend(false)
   }else{
@@ -65,7 +65,7 @@ function verify(){
 
   function verifySimples(){
 
-    if(nome.length < 4 || email.length < 8 || telefone.length < 8){
+    if(nome.length < 4 || email.length < 10 || telefone.length < 15){
       setCheckBlockSend(true)
       document.getElementById("exampleCheck1").checked = false
     }
@@ -166,7 +166,7 @@ function handleSubmit(event) {
           
             <button type="submit" class="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>Enviar</button>
             {
-                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O nome precisa ter o mínimo de 3 caracteres</div>
+                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O Nome Completo está muito curto</div>
             }
             {
                             messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o e-mail</div>
