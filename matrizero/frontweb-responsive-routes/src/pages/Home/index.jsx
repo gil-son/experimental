@@ -1,7 +1,7 @@
 import ImgCourse from '../../assets/images/remote.png';
 import ButtonIcon from 'components/ButtonIcon';
 
-import { GridExample, MultiCards } from 'components/Card';
+import { GridExample, AnimatedCard, MultiCards } from 'components/Card';
 import RadarChartWorks from 'components/Progress/index';
 import Circle from '../../components/Animate';
 import { Link } from 'react-router-dom';
@@ -40,8 +40,7 @@ const Home = () => {
               <Circle />
               <h1>Conheça o melhor catálogo de cursos</h1>
               <p>
-                Desenvolvemos cursos com situações do dia a dia de alguém que já está no
-                mercado. E, cada curso é sempre renovado! Estudo individual ou em grupo!
+                Desenvolvemos cursos com situações do mercado. E, cada curso é sempre renovado! Estudo individual ou em grupo!
               </p>
             </div>
             <div>
@@ -61,20 +60,29 @@ const Home = () => {
         <div className="row mt-5">
           < MultiCards />
         </div>
-        <div className="row mt-5">
-          <GridExample />
-        </div>
+        
         </div>
       </div>
+
+      <div className={`home-container d-flex`}>
+  <div className="row flex-column flex-md-row flex-grow-1">
+    <div className="col col-sm-12 col-md-6 d-flex">
+      <GridExample />
+    </div>
+    <div className="col col-sm-12 col-md-6 d-flex">
+      <AnimatedCard />
+    </div>
+  </div>
+</div>
 
 
       <div className={`home-container`}>
         <div className="base-card home-card">
           <div className="home-content-container">
           
-            <h1>Estamos alinhados com o mercado Nacional e Internacional!!!</h1>
+            <h1>Carreiras Nacionais e Internacionais!</h1>
               <p>
-                Em média os alunos que fizeram algum de nossos cursos tendem a trabalhar nesses locais/plataformas
+                Em média os alunos que fizeram algum de nossos cursos tendem a trabalhar nesses locais ou plataformas
               </p>
           
           </div>

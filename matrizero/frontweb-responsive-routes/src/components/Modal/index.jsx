@@ -131,7 +131,7 @@ function handleSubmit(event) {
 
   return (
     <>
-      <Button variant="secondary" onClick={handleShow}>
+      <Button variant="secondary" onClick={handleShow} className="custom-button shadow">
         QUERO RECEBER E-MAILS COM NOVIDADES
       </Button>
 

@@ -1,4 +1,3 @@
-
 import { Radar } from "react-chartjs-2";
 
 export const RadarChartWorks = () => {
@@ -12,7 +11,7 @@ export const RadarChartWorks = () => {
           'BANCOS',
           'E-COMMERCE',
           'STARTUPS',
-          'EXTERIOR',
+          'OUTROS',
           'FREELANCER',
           'STREAMS'
       ],
@@ -57,7 +56,14 @@ export const RadarChartWorks = () => {
       //             }
       //         }
       //     ]
-      //  }
+      //  },
+      scale: {
+        ticks: {
+          font: {
+            weight: 'bold'
+          }
+        }
+      }
   }
 
   return (
@@ -70,9 +76,4 @@ export const RadarChartWorks = () => {
   )
 }
 
-
-
-
 export default RadarChartWorks;
-
-

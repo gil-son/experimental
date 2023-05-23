@@ -2,3 +2,25 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
+
+.card-one{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.card-multiples{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.card-multiples-titles{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.card-title{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+}
