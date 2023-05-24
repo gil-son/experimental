@@ -1,6 +1,5 @@
 import ImgCourse from '../../assets/images/remote.png';
 import ButtonIcon from 'components/ButtonIcon';
-
 import { GridExample, AnimatedCard, MultiCards } from 'components/Card';
 import RadarChartWorks from 'components/Progress/index';
 import Circle from '../../components/Animate';
@@ -92,6 +91,9 @@ const Home = () => {
         </div>
       </div>
 
+
+      
+      
     </>
   );
 };

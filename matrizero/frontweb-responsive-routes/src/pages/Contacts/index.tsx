@@ -5,7 +5,7 @@ import './styles.css';
 
 const Contacts = () => {
   return <>
-    <div className="container mt-5 shadow jus">
+    <div className="container mt-5 shadow vh-100 mb-5">
       <div className="row">
         <div className="col-sm mt-2 mb-2">
           <div> <Network /></div>

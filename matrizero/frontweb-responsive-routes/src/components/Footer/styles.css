@@ -1,0 +1,5 @@
+.my-effect{
+    border: 1px inset white !important;
+    border-radius: 5px;
+    background: linear-gradient(to right, #230739, #77a4fe)!important;
+  }

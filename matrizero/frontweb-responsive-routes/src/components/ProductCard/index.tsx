@@ -34,7 +34,7 @@ const ProductCard = () => {
                 <button className={button3} onClick={ () => {setShow(""); setButton1(no_active); setButton2(no_active); setButton3(active)}}>Todos</button>
             
             </div>
-            <div className="row">
+            <div className="row vh-100">
                 <>{Static_Api.map(json => {
 
                     if( show === ""){
