@@ -34,7 +34,7 @@ const ProductCard = () => {
                 <button className={button3} onClick={ () => {setShow(""); setButton1(no_active); setButton2(no_active); setButton3(active)}}>Todos</button>
             
             </div>
-            <div className="row vh-100">
+            <div className="row">
                 <>{Static_Api.map(json => {
 
                     if( show === ""){
@@ -66,7 +66,7 @@ const ProductCard = () => {
                             <a href={json.link} target='_blank'>
                                 <div className="base-card product-card">
                                     <div className="card-top-container">
-                                        <img src="https://cdn.pixabay.com/photo/2014/05/10/19/23/presentation-341444_1280.png" alt="Nome do produto" />
+                                        <img src={json.image} alt="Nome do produto" />
                                     </div>
                                     <div className="card-bottom-container">
                                         <p>

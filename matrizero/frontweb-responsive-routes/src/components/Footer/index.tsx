@@ -78,7 +78,7 @@ const Footer = () => {
             <h5>Informações</h5>
             <ul className="list-unstyled">
               <li><a href="#">Sobre nós</a></li>
-              <li><a href="https://apoia.se/matrizero">Apoia-se</a></li>
+              <li><a href="https://apoia.se/matrizero" target="_blank">Apoia-se</a></li>
               <li><a href="#">Política de Privacidade</a></li>
             </ul>
           </div>
