@@ -1,7 +1,7 @@
 import './styles.css';
 import {useState} from 'react';
-import { ProductInfo } from 'components/ProductInfo';
-import Static_Api from './../../utils/static_api.json';
+import {PriceInfo} from 'components/PriceInfo'
+import Static_Api from '../../utils/static_api.json';
 
 function Props(props: { brand: boolean }) {
     if(props.brand == true){
@@ -12,7 +12,7 @@ function Props(props: { brand: boolean }) {
 }
 
 
-const ProductCard = () => {
+const ProgramacaoCard = () => {
 
     let [ show, setShow] = useState("");
 
@@ -53,7 +53,7 @@ const ProductCard = () => {
                                         <p>
                                             <b>Info:</b>  {json.info}
                                         </p>
-                                        <ProductInfo price={json.price} />
+                                        <PriceInfo price={json.price} />
                                     </div>
                                 </div>
                             </a>
@@ -76,7 +76,7 @@ const ProductCard = () => {
                                         <p>
                                             <b>Info:</b>  {json.info}
                                         </p>
-                                        <ProductInfo price={json.price} />
+                                        <PriceInfo price={json.price} />
                                     </div>
                                 </div>
                             </a>
@@ -100,7 +100,7 @@ const ProductCard = () => {
                                         <p>
                                             <b>Info:</b> {json.info}
                                         </p>
-                                        <ProductInfo price={json.price} />
+                                        <PriceInfo price={json.price} />
                                     </div>
                                 </div>
                             </a>
@@ -112,4 +112,4 @@ const ProductCard = () => {
     );
 }
 
-export default ProductCard;
+export default ProgramacaoCard;

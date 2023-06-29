@@ -43,7 +43,7 @@ const Home = () => {
               </p>
             </div>
             <div>
-              <Link to="/products">
+              <Link to="/programacao">
                 <ButtonIcon />
               </Link>
             </div>

@@ -1,6 +1,6 @@
 import './styles.css';
 
-export function ProductInfo(props: { price: string}) {
+export function PriceInfo(props: { price: string}) {
     return (
         <div className="product-price-container">
             <span>R$</span>

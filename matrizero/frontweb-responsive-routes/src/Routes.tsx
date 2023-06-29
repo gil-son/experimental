@@ -2,7 +2,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from 'pages/Home';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
-import Catalog from 'pages/Catalog';
+import Programacao from 'pages/Programacao';
+import Linguas from 'pages/Linguas';
 import Contacts from 'pages/Contacts';
 
 const Routes = () => (
@@ -12,10 +13,13 @@ const Routes = () => (
       <Route path="/" exact>
         <Home />
       </Route>
-      <Route path="/products">
-        <Catalog />
+      <Route path="/programacao">
+        <Programacao />
       </Route>
-      <Route path="/contacts">
+      <Route path="/linguas">
+        <Linguas />
+      </Route>
+      <Route path="/contatos">
         <Contacts />
       </Route>
     </Switch>

@@ -15,7 +15,7 @@
 .main-menu {
   display: flex;
   font-size: 18px;
-  width: 380px;
+  width: 480px;
   justify-content: space-between;
 }
 

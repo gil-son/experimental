@@ -1,0 +1,44 @@
+[
+    
+    {
+        "id":1,
+        "name":"Curso de Pronúncia Essencial - Inglês",
+        "free": false,
+        "price":"47.00",
+        "link":"https://go.hotmart.com/P83147943X?dp=1",
+        "image":"https://static-media.hotmart.com/Li8oRdNIe9HLGv04okconGdAW68=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/a3dc805c-dcbf-4d9b-bd7f-b1dd9b127b0b/RodrigoRXCurso.png?w=920",
+        "matrizero":false,
+        "info": "A pronúncia é a ferramenta que permite que entendamos como os falantes nativos de uma língua usam os sons em associação com as letras e conjunto de letras nas palavras."
+    },
+    {
+        "id":2,
+        "name":"Curso de Pronúncia Essencial - Inglês",
+        "free": false,
+        "price":"47.00",
+        "link":"https://go.hotmart.com/P83147943X?dp=1",
+        "image":"https://static-media.hotmart.com/Li8oRdNIe9HLGv04okconGdAW68=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/a3dc805c-dcbf-4d9b-bd7f-b1dd9b127b0b/RodrigoRXCurso.png?w=920",
+        "matrizero":false,
+        "info": "A pronúncia é a ferramenta que permite que entendamos como os falantes nativos de uma língua usam os sons em associação com as letras e conjunto de letras nas palavras."
+    },
+    {
+        "id":3,
+        "name":"Curso de Pronúncia Essencial - Inglês",
+        "free": false,
+        "price":"47.00",
+        "link":"https://go.hotmart.com/P83147943X?dp=1",
+        "image":"https://static-media.hotmart.com/Li8oRdNIe9HLGv04okconGdAW68=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/a3dc805c-dcbf-4d9b-bd7f-b1dd9b127b0b/RodrigoRXCurso.png?w=920",
+        "matrizero":false,
+        "info": "A pronúncia é a ferramenta que permite que entendamos como os falantes nativos de uma língua usam os sons em associação com as letras e conjunto de letras nas palavras."
+    },
+    {
+        "id":4,
+        "name":"Curso de Pronúncia Essencial - Inglês",
+        "free": true,
+        "price":"47.00",
+        "link":"https://go.hotmart.com/P83147943X?dp=1",
+        "image":"https://static-media.hotmart.com/Li8oRdNIe9HLGv04okconGdAW68=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/a3dc805c-dcbf-4d9b-bd7f-b1dd9b127b0b/RodrigoRXCurso.png?w=920",
+        "matrizero":false,
+        "info": "A pronúncia é a ferramenta que permite que entendamos como os falantes nativos de uma língua usam os sons em associação com as letras e conjunto de letras nas palavras."
+    }
+    
+]

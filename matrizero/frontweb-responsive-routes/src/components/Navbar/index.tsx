@@ -48,18 +48,23 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="dscatalog-navbar">
           <ul className="navbar-nav offset-md-2 main-menu">
-            <li>
+            <li >
               <NavLink to="/" activeClassName="active" exact>
                 HOME
               </NavLink>
             </li>
             <li>
-              <NavLink to="/products" activeClassName="active">
-                CURSOS
+              <NavLink to="/programacao" activeClassName="active">
+                PROGRAMAÇÃO
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contacts" activeClassName="active">
+              <NavLink to="/linguas" activeClassName="active">
+                LINGUAS
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contatos" activeClassName="active">
                 CONTATOS
               </NavLink>
             </li>
