@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import './style.css';
 
@@ -145,7 +145,77 @@ function handleSubmit(event) {
     }
         
     }
-   
+    
+
+
+  const [isHuman, setIsHuman] = useState(false);
+  const [circles, setCircles] = useState([]);
+  const [chances, setChances] = useState(2);
+  const [isValid, setIsValid] = useState(false);
+
+  const [next, setNext] = useState()
+
+  useEffect(() => {
+    const shuffledCircles = shuffleCircles();
+    setCircles(shuffledCircles);
+  }, []);
+
+  const shuffleCircles = () => {
+    const initialCircles = [...Array(20)].map((_, index) => ({
+      id: index,
+      isGreen: index === 9,
+    }));
+
+    const shuffledCircles = [...initialCircles].sort(() => Math.random() - 0.5);
+    return shuffledCircles;
+  };
+
+  const handleCircleClick = (id) => {
+    if (id === 9) {
+      setIsHuman(true);
+      setNext(true);
+    } else {
+      setChances(chances - 1);
+    }
+  };
+
+
+
+  const [emotionEscolhido, setEmotionEscolhido] = useState("")
+ 
+
+  const listEmotions = [
+    { id: 1, nome: "nerd", valor: "🤓" },
+    { id: 2, nome: "boca", valor: "😲" },
+    { id: 3, nome: "lingua", valor: "😝" },
+    { id: 4, nome: "sorriso", valor: "🙂" },
+    { id: 5, nome: "cowboy", valor: "🤠" }
+  ];
+
+ 
+  function SorteiaNome(){
+  
+    for (let i = listEmotions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [listEmotions[i], listEmotions[j]] = [listEmotions[j], listEmotions[i]];
+    }
+    
+    return listEmotions[2].nome
+  }
+  
+
+  
+
+  function verifyEmotion(nome) {
+    if(nome == listEmotions[2].nome){  
+      setNext(false)
+      setIsValid(true)
+    }else{
+      setChances(chances - 1)
+    }
+    
+  }
+
    return (
         <>
         <form onSubmit={handleSubmit}>
@@ -170,6 +240,72 @@ function handleSubmit(event) {
             <label for="exampleInputTelefone1">Assunto</label>
             <input value={subject} type="phone" onChange={handleSubjectChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="Informe o assunto"/>
           </div>
+
+          <div class="form-group mt-2">
+          
+          <div>
+              {!isValid ? (
+                  <>
+                  <h4>Validador de Humano</h4>
+                  <p>Chances restantes: {chances}</p>
+                  </>
+              ) : (
+                <p>Etapa Verificada!</p>
+              ) }
+              
+              {!isHuman && chances > 0 ? (
+                <div>
+                  <p>Clique no círculo verde escuro:</p>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      gap: '10px',
+                      width: '300px',
+                      margin: '0 auto',
+                    }}
+                  >
+                    {circles.map((circle) => (
+                      <div
+                        key={circle.id}
+                        style={{
+                          width: circle.isGreen ? '15px' : '20px',
+                          height: circle.isGreen ? '15px' : '20px',
+                          borderRadius: '50%',
+                          backgroundColor: circle.isGreen ? 'green' : 'MediumSeaGreen',
+                          cursor: 'pointer',
+                        }}
+                        onClick={() => handleCircleClick(circle.id)}
+                      ></div>
+                    ))}
+                  </div>
+                  
+                </div>
+              ) : (
+                <>
+                <p>{chances === 0 && 'Verificação falhou. Tente novamente.'}</p>
+                <p>{next && !isValid && 'Clique no ' + SorteiaNome()}</p>
+                
+                </>
+              )}
+            </div>
+
+            <div className="d-flex justify-content-between">
+          {chances > 0 && next && listEmotions.map((emotion) => (
+            <div key={emotion.id}>
+              <p onClick={() => verifyEmotion(emotion.nome)}>{emotion.valor}</p> </div>
+          ))
+          
+          
+          
+          }
+        </div>
+
+
+        </div>
+
 
           <div class="form-group">
             <label for="exampleInputNome1">Mensagem</label>
