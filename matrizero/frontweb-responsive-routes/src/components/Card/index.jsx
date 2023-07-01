@@ -1,6 +1,5 @@
 import ModalNotification from 'components/Modal';
 import { Carousel } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './style.css';
 import ImgJava from '../../assets/images/java_em_breve.gif';
@@ -50,26 +49,26 @@ export function AnimatedCard(){
         <Card.Text className='card-one'>
         <br/>
         <p>
-        💡 Quer dar um passo além no universo da programação e respeitando o seu momento? 
+          Quer dar um passo além no universo da programação e respeitando o seu momento? 
         </p>
         <p>
-        A Matrizero tem a solução perfeita para você, seja você um desenvolvedor iniciante ou um aspirante a conquistar o primeiro emprego ou uma nova conquista no mundo tech! 😎
-        </p>
-        <br/>
-        <p>
-        Nossos cursos vão te ensinar desde os conceitos básicos até técnicas avançadas, tudo de forma divertida e humorada. Já pensou em ter o poder de dominar as linhas de código como um verdadeiro Neo da programação? 💻🕶️
+        A Matrizero tem a solução perfeita para você, seja você um desenvolvedor iniciante ou um aspirante a conquistar o primeiro emprego ou uma nova conquista no mundo tech!
         </p>
         <br/>
         <p>
-        E tem mais, estamos em todos os lugares: YouTube, Udemy e até mesmo em nossas próprias plataformas exclusivas. 🌐📚
+        Nossos cursos vão te ensinar desde os conceitos básicos até técnicas avançadas, tudo de forma divertida e humorada. Já pensou em ter o poder de dominar as linhas de código como um verdadeiro Neo da programação?
         </p>
         <br/>
         <p>
-        Quer ficar por dentro de todas as novidades, lançamentos de cursos e dicas quentinhas? Não perca tempo, inscreva-se agora mesmo para receber nossos e-mails cheios de conteúdo, risadas e, claro, os melhores descontos! 💥📧
+        E tem mais, estamos em todos os lugares: YouTube, Udemy e até mesmo em nossas próprias plataformas exclusivas.
         </p>
         <br/>
         <p>
-        Prepare-se para embarcar nessa jornada incrível rumo ao sucesso na carreira de desenvolvimento, com a Matrizero ao seu lado! Clique no botão abaixo e junte-se a nós nessa aventura! 👇🚀
+        Quer ficar por dentro de todas as novidades, lançamentos de cursos e dicas quentinhas? Não perca tempo, inscreva-se agora mesmo para receber nossos e-mails cheios de conteúdo, risadas e, claro, os melhores descontos!
+        </p>
+        <br/>
+        <p>
+        Prepare-se para embarcar nessa jornada incrível rumo ao sucesso na carreira de desenvolvimento, com a Matrizero ao seu lado! Clique no botão abaixo e junte-se a nós nessa aventura!
         </p>
         </Card.Text>
         <ModalNotification/>

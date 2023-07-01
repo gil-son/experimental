@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import {Button, Modal} from 'react-bootstrap';
 import './style.css';
@@ -18,6 +18,7 @@ function ModalNotification() {
   let [ messageName, setMessageName] = useState(false);
   let [ messageEmail, setMessageEmail] = useState(false);
   let [ messagePhone, setMessagePhone] = useState(false);
+  let [ messageIsValid, setMessageIsValid] = useState(false);
 
   let [ messageAgradece, setessageAgradece] = useState(false);
 
@@ -50,9 +51,10 @@ function verify(){
   if(nome.length < 5){setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome maior ou igual a 4", nome.length)}
   if(email.length <8 || !email.includes("@")){setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
   if(telefone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
-  
+  if(!isValid){setMessageIsValid(true); setTimeout( () => {setMessageIsValid(false)},10000);}
 
-  if(nome.length > 3 && email.length > 9 && email.includes("@") && telefone.length > 13){
+
+  if(nome.length > 3 && email.length > 9 && email.includes("@") && telefone.length > 13 && isValid){
           console.log("segundo 2")
           setCheckBlockSend(false)
   }else{
@@ -65,7 +67,7 @@ function verify(){
 
   function verifySimples(){
 
-    if(nome.length < 4 || email.length < 10 || telefone.length < 15){
+    if(nome.length < 4 || email.length < 10 || telefone.length < 15 || isValid){
       setCheckBlockSend(true)
       document.getElementById("exampleCheck1").checked = false
     }
@@ -129,6 +131,69 @@ function handleSubmit(event) {
       
   }
 
+  const [isHuman, setIsHuman] = useState(false);
+  const [circles, setCircles] = useState([]);
+  const [chances, setChances] = useState(2);
+  const [isValid, setIsValid] = useState(false);
+
+  const [next, setNext] = useState()
+
+  useEffect(() => {
+    const shuffledCircles = shuffleCircles();
+    setCircles(shuffledCircles);
+  }, []);
+
+  const shuffleCircles = () => {
+    const initialCircles = [...Array(20)].map((_, index) => ({
+      id: index,
+      isGreen: index === 9,
+    }));
+
+    const shuffledCircles = [...initialCircles].sort(() => Math.random() - 0.5);
+    return shuffledCircles;
+  };
+
+  const handleCircleClick = (id) => {
+    if (id === 9) {
+      setIsHuman(true);
+      setNext(true);
+    } else {
+      setChances(chances - 1);
+    }
+  };
+ 
+
+  const listEmotions = [
+    { id: 1, nome: "emotion nerd", valor: "🤓" },
+    { id: 2, nome: "emotion surpreso", valor: "😲" },
+    { id: 3, nome: "emotion mostrando a lingua", valor: "😝" },
+    { id: 4, nome: "no emotion com simples sorriso", valor: "🙂" },
+    { id: 5, nome: "no emotion cowboy", valor: "🤠" }
+  ];
+
+ 
+  function SorteiaNome(){
+  
+    for (let i = listEmotions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [listEmotions[i], listEmotions[j]] = [listEmotions[j], listEmotions[i]];
+    }
+    
+    return listEmotions[2].nome
+  }
+  
+
+  function verifyEmotion(nome) {
+    if(nome == listEmotions[2].nome){  
+      setNext(false)
+      setIsValid(true)
+    }else{
+      setChances(chances - 1)
+    }
+    
+  }
+
+
   return (
     <>
       <Button variant="secondary" onClick={handleShow} className="custom-button shadow">
@@ -159,6 +224,80 @@ function handleSubmit(event) {
             <input value={telefone} type="telefone" onChange={handleTelefoneChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="O seu celular com DDD"/>
           </div>
 
+          <div class="form-group mt-2">
+          
+          <div>
+              {!isValid ? (
+                  <>
+                  <div>
+                  <label for="exampleInputValidadorDeHumano">Validador de Humano</label>
+                  </div>
+                  <div>
+                  <label>Chances restantes: {chances}</label>
+                  </div>
+                  </>
+              ) : (
+                <div>
+                  <label>Etapa Verificada!</label>
+                  </div>
+              ) }
+              
+              {!isHuman && chances > 0 ? (
+                <div>
+                  <div>
+                    <label>Clique no círculo verde escuro:</label>
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      gap: '10px',
+                      width: '300px',
+                      margin: '0 auto',
+                    }}
+                  >
+                    {circles.map((circle) => (
+                      <div
+                        key={circle.id}
+                        style={{
+                          width: circle.isGreen ? '20px' : '20px',
+                          height: circle.isGreen ? '20px' : '20px',
+                          borderRadius: '50%',
+                          backgroundColor: circle.isGreen ? 'green' : 'MediumSeaGreen',
+                          cursor: 'pointer',
+                        }}
+                        onClick={() => handleCircleClick(circle.id)}
+                      ></div>
+                    ))}
+                  </div>
+                  
+                </div>
+              ) : (
+                <>
+                <label>{chances === 0 && 'Verificação falhou. Tente novamente.'}</label>
+                <label>{next && !isValid && chances > 0 && 'Clique no ' + SorteiaNome()}</label>
+                
+                </>
+              )}
+            </div>
+
+            <div className="d-flex justify-content-between">
+          {chances > 0 && next && listEmotions.map((emotion) => (
+            <div key={emotion.id}>
+              <p onClick={() => verifyEmotion(emotion.nome)}>{emotion.valor}</p> </div>
+          ))
+          
+          
+          
+          }
+        </div>
+
+
+        </div>
+
+
           <div class="form-check mt-2">
             <input value={confirma} type="checkbox" onChange={handleConfirmaChange} class="form-check-input" id="exampleCheck1" required/>
             <label class="form-check-label" for="exampleCheck1">As informações estão protegidas conforme a LGPD n° 13.709/2018  </label>
@@ -174,6 +313,10 @@ function handleSubmit(event) {
             {
                             messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o número de telefone</div>
             }
+            {
+                            messageIsValid && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A validação se é humano precisa ser concluida</div>
+            }
+
             {
                             messageAgradece && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Agradecemos !!!</div>
             }

@@ -23,8 +23,8 @@ function FormEmail() {
     let [ messagePhone, setMessagePhone] = useState(false);
     let [ messageSubject, setMessageSubject] = useState(false);
     let [ messageMessage, setMessageMessage] = useState(false);
-
-
+    let [ messageIsValid, setMessageIsValid] = useState(false);
+    
     let [ messageSending, setMessageSending] = useState(false);
 
     const history = useHistory();
@@ -43,7 +43,7 @@ function FormEmail() {
         if (rawValue.length > 6) {
           formattedValue += rawValue.slice(7, 11); // Adiciona o restante dos dígitos, limitando a 14 caracteres
         }
-      }
+      } 
   
       setPhone(formattedValue);
     }
@@ -55,9 +55,10 @@ function verify(){
   if(phone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   if(subject.length < 5){setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},10000);}
   if(message.length < 10){console.log("message menor que 10", message.length);  setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}else{console.log("message maior ou igual a 4", message.length)}
+  if(!isValid){setMessageIsValid(true); setTimeout( () => {setMessageIsValid(false)},10000);}
 
 
-  if(name.length > 3 && email.length > 7 && email.includes("@") && phone.length > 13 && subject.length > 4 && message.length > 9){
+  if(name.length > 3 && email.length > 7 && email.includes("@") && phone.length > 13 && subject.length > 4 && message.length > 9 && isValid){
           console.log("segundo 2")
           setCheckBlockSend(false)
   }else{
@@ -70,7 +71,7 @@ function verify(){
 
   function verifySimples(){
 
-    if(name.length < 4 || email.length < 10 || phone.length < 15 || subject.length < 4 || message.length < 10){
+    if(name.length < 4 || email.length < 10 || phone.length < 15 || subject.length < 4 || message.length < 10 || !isValid){
       setCheckBlockSend(true)
       document.getElementById("exampleCheck1").checked = false
     }
@@ -185,11 +186,11 @@ function handleSubmit(event) {
  
 
   const listEmotions = [
-    { id: 1, nome: "nerd", valor: "🤓" },
-    { id: 2, nome: "boca", valor: "😲" },
-    { id: 3, nome: "lingua", valor: "😝" },
-    { id: 4, nome: "sorriso", valor: "🙂" },
-    { id: 5, nome: "cowboy", valor: "🤠" }
+    { id: 1, nome: "emotion nerd", valor: "🤓" },
+    { id: 2, nome: "emotion surpreso", valor: "😲" },
+    { id: 3, nome: "emotion mostrando a lingua", valor: "😝" },
+    { id: 4, nome: "no emotion com simples sorriso", valor: "🙂" },
+    { id: 5, nome: "no emotion cowboy", valor: "🤠" }
   ];
 
  
@@ -236,26 +237,30 @@ function handleSubmit(event) {
             <input value={phone} type="phone" onChange={handlePhoneChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="O seu celular com DDD"/>
           </div>
 
-          <div class="form-group mt-2">
-            <label for="exampleInputTelefone1">Assunto</label>
-            <input value={subject} type="phone" onChange={handleSubjectChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="Informe o assunto"/>
-          </div>
 
           <div class="form-group mt-2">
           
           <div>
               {!isValid ? (
                   <>
-                  <h4>Validador de Humano</h4>
-                  <p>Chances restantes: {chances}</p>
+                  <div>
+                  <label for="exampleInputValidadorDeHumano">Validador de Humano</label>
+                  </div>
+                  <div>
+                  <label>Chances restantes: {chances}</label>
+                  </div>
                   </>
               ) : (
-                <p>Etapa Verificada!</p>
+                <div>
+                  <label>Etapa Verificada!</label>
+                  </div>
               ) }
               
               {!isHuman && chances > 0 ? (
                 <div>
-                  <p>Clique no círculo verde escuro:</p>
+                  <div>
+                    <label>Clique no círculo verde escuro:</label>
+                  </div>
                   <div
                     style={{
                       display: 'flex',
@@ -271,8 +276,8 @@ function handleSubmit(event) {
                       <div
                         key={circle.id}
                         style={{
-                          width: circle.isGreen ? '15px' : '20px',
-                          height: circle.isGreen ? '15px' : '20px',
+                          width: circle.isGreen ? '20px' : '20px',
+                          height: circle.isGreen ? '20px' : '20px',
                           borderRadius: '50%',
                           backgroundColor: circle.isGreen ? 'green' : 'MediumSeaGreen',
                           cursor: 'pointer',
@@ -285,8 +290,8 @@ function handleSubmit(event) {
                 </div>
               ) : (
                 <>
-                <p>{chances === 0 && 'Verificação falhou. Tente novamente.'}</p>
-                <p>{next && !isValid && 'Clique no ' + SorteiaNome()}</p>
+                <label>{chances === 0 && 'Verificação falhou. Tente novamente.'}</label>
+                <label>{next && !isValid && chances > 0 && 'Clique no ' + SorteiaNome()}</label>
                 
                 </>
               )}
@@ -306,6 +311,10 @@ function handleSubmit(event) {
 
         </div>
 
+        <div class="form-group mt-2">
+            <label for="exampleInputTelefone1">Assunto</label>
+            <input value={subject} type="phone" onChange={handleSubjectChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="Informe o assunto"/>
+        </div>
 
           <div class="form-group">
             <label for="exampleInputNome1">Mensagem</label>
@@ -333,12 +342,16 @@ function handleSubmit(event) {
                             messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o número de telefone</div>
                         }
                         {
+                            messageIsValid && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A validação se é humano precisa ser concluida</div>
+                        }
+                        {
                             messageSubject && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O Assunto precisa ter o mínimo de 5 caracteres</div>
                         }
-                        
+
                         {
                             messageMessage && <div className="d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A mensagem está muito curta</div>
                         }
+                               
                         {
                             messageSending && <div className=" d-flex alert alert-success border border-primary mx-auto my-4 w-100 justify-content-around send-ok shadow" role="alert">Sucesso! Respondemos em até um dia últil!</div>
                         }
