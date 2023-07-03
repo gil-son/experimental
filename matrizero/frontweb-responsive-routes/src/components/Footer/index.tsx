@@ -86,7 +86,7 @@ const Footer = () => {
             <h5>Contato</h5>
             <ul className="list-unstyled">
               <li><a href="tel:11 94053-4609">11 94053-4609</a></li>
-              <li><a href="mailto:matrizero.dev@gmail.com">matrizero.dev@gmail.com</a></li>
+              <li><a href="mailto:gilson@matrizero.com.br">gilson@matrizero.com.br</a></li>
               <li><a href="#">São Paulo - SP, 02675-031</a></li>
             </ul>
           </div>
