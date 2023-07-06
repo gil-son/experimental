@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react';
+import SessionBlocker from '../../utils/SessionBlocker';
 import { useHistory } from 'react-router-dom';
 import './style.css';
 
 function FormEmail() {
 
-  
+  const [isSessionBlocked, setIsSessionBlocked] = useState(false);
 
     let [ name, setName] = useState("");
     let [ email, setEmail] = useState("");
@@ -12,7 +13,6 @@ function FormEmail() {
     let [ subject, setSubject] = useState("");
     let [ message, setMessage] = useState("");
     let [confirm, setConfirm] = useState(false);
-
 
   let [ checkBlockSend, setCheckBlockSend] = useState(true);
     
@@ -55,11 +55,10 @@ function verify(){
   if(phone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   if(subject.length < 5){setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},10000);}
   if(message.length < 10){console.log("message menor que 10", message.length);  setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}else{console.log("message maior ou igual a 4", message.length)}
-  if(!isValid){setMessageIsValid(true); setTimeout( () => {setMessageIsValid(false)},10000);}
+  //if(!isValid){setMessageIsValid(true); setTimeout( () => {setMessageIsValid(false)},10000);}
 
 
-  if(name.length > 3 && email.length > 7 && email.includes("@") && phone.length > 13 && subject.length > 4 && message.length > 9 && isValid){
-          console.log("segundo 2")
+  if(name.length > 3 && email.length > 7 && email.includes("@") && phone.length > 13 && subject.length > 4 && message.length > 9){ // && isValid
           setCheckBlockSend(false)
   }else{
           setCheckBlockSend(true)
@@ -81,9 +80,23 @@ function verify(){
 
 
 function handleSubmit(event) {
+  const rest = Number(localStorage.getItem('duration')) - Date.now()
+  console.log("rest:", rest)
+  console.log("Agora:", Date.now())
+  console.log("Duracao:", Number(localStorage.getItem('duration')))
+
+  event.preventDefault();
+  if(rest>0){
+    console.log("rest of session: ", rest)
+    
+  }else{
+      setIsSessionBlocked(false)
+      console.log("desblocked, passed: ", rest)
+      localStorage.removeItem('duration')
       event.preventDefault();
 
       // Enviar dados para o SheetDB API usando fetch
+      /*
       const url = 'https://sheetdb.io/api/v1/v89vx00xbrigs';
       const data = { name, email, phone, subject, message, confirm };
       fetch(url, {
@@ -104,8 +117,8 @@ function handleSubmit(event) {
         .catch(error => {
           console.error(error);
         });
-
-        
+    */
+      }
   }
   
     function handleNomeChange(event) {
@@ -161,6 +174,15 @@ function handleSubmit(event) {
     setCircles(shuffledCircles);
   }, []);
 
+  
+  useEffect(() => {
+    if(chances === 0){
+      setIsSessionBlocked(true)
+      localStorage.setItem('time', Date.now());
+      localStorage.setItem('duration', Date.now() + 1 * 60 * 1000);
+    }
+  }, [chances]);
+
   const shuffleCircles = () => {
     const initialCircles = [...Array(20)].map((_, index) => ({
       id: index,
@@ -179,10 +201,6 @@ function handleSubmit(event) {
       setChances(chances - 1);
     }
   };
-
-
-
-  const [emotionEscolhido, setEmotionEscolhido] = useState("")
  
 
   const listEmotions = [
@@ -239,7 +257,7 @@ function handleSubmit(event) {
 
 
           <div class="form-group mt-2">
-          
+          {localStorage.getItem('duration') == null ? (
           <div>
               {!isValid ? (
                   <>
@@ -295,7 +313,13 @@ function handleSubmit(event) {
                 
                 </>
               )}
+              
             </div>
+            ): (
+              <div>
+                Você não passou na verificação. Tente novamente em alguns minutos
+              </div>
+            )}
 
             <div className="d-flex justify-content-between">
           {chances > 0 && next && listEmotions.map((emotion) => (
@@ -306,6 +330,7 @@ function handleSubmit(event) {
           
           
           }
+          
         </div>
 
 
@@ -357,6 +382,15 @@ function handleSubmit(event) {
                         }
                         <small>Preencha os campos de forma adquada para habilitar o botão Enviar</small>
         </form>
+        <div>
+          {isSessionBlocked ? (
+            <div>
+              Sessão bloqueada por {} segundos.
+            </div>
+          ) : (
+            <div>Sessão desbloqueada.</div>
+          )}
+    </div>
         </>
     );
 }
