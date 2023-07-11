@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import {Button, Modal} from 'react-bootstrap';
 import './style.css';
 
 function ModalNotification() {
+  const isSessionBlockedRef = useRef(0);
+  let [rest, setRest] = useState(0);
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -77,9 +80,25 @@ function verify(){
 
 
 function handleSubmit(event) {
+      rest = Number(localStorage.getItem('duration-event')) - Date.now()
+      console.log("rest:", rest)
+      console.log("Agora:", Date.now())
+      console.log("Duracao:", Number(localStorage.getItem('duration-event'))) 
+
+
       event.preventDefault();
 
+      if(rest>0){
+        console.log("rest of session: ", rest)
+        
+      }else{
+          isSessionBlockedRef.current = false
+          console.log("desblocked, passed: ", rest)
+          localStorage.removeItem('duration-event')
+          event.preventDefault();
+
       // Enviar dados para o SheetDB API usando fetch
+      /*
       const url = 'https://sheetdb.io/api/v1/li2m6i21d3vnw';
       const data = { nome, email, telefone, confirma };
       fetch(url, {
@@ -101,6 +120,8 @@ function handleSubmit(event) {
         setessageAgradece(true);
 
         setTimeout( () => {handleClose()},3000);
+        */
+      }
   }
   
   function handleNomeChange(event) {
@@ -142,6 +163,29 @@ function handleSubmit(event) {
     const shuffledCircles = shuffleCircles();
     setCircles(shuffledCircles);
   }, []);
+
+  function verifySession(){
+   
+    console.log("Agora:", Date.now())
+    console.log("Duracao:", Number(localStorage.getItem('duration-event')))
+    console.log(Number(localStorage.getItem('duration-event')) - Date.now())
+    if(Number(localStorage.getItem('duration-event')) - Date.now() >0){
+      
+      }else{
+        localStorage.removeItem('duration-event')
+        console.log("rest of session: ", rest)
+        //setIsSessionBlocked(false);
+        isSessionBlockedRef.current = false;
+    }
+  }
+
+  useEffect(() => {
+    if(chances === 0){
+      isSessionBlockedRef.current = true
+      localStorage.setItem('time-event', Date.now());
+      localStorage.setItem('duration-event', Date.now() + 1 * 60 * 1000);
+    }
+  }, [chances]);
 
   const shuffleCircles = () => {
     const initialCircles = [...Array(20)].map((_, index) => ({
@@ -206,7 +250,7 @@ function handleSubmit(event) {
         </Modal.Header>
         <Modal.Body>
           
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} onLoad={verifySession()}>
           
           <div class="form-group">
             <label for="exampleInputNome1">Nome Completo</label>
@@ -226,6 +270,7 @@ function handleSubmit(event) {
 
           <div class="form-group mt-2">
           
+          {localStorage.getItem('duration-event') == null ? (
           <div>
               {!isValid ? (
                   <>
@@ -281,7 +326,13 @@ function handleSubmit(event) {
                 
                 </>
               )}
+              
             </div>
+            ): (
+              <div>
+                Você não passou na verificação. Tente novamente em alguns minutos
+              </div>
+            )}
 
             <div className="d-flex justify-content-between">
           {chances > 0 && next && listEmotions.map((emotion) => (
@@ -292,8 +343,8 @@ function handleSubmit(event) {
           
           
           }
-        </div>
-
+          
+        </div>           
 
         </div>
 

@@ -398,15 +398,6 @@ function handleSubmit(event) {
                         }
                         <small>Preencha os campos de forma adquada para habilitar o botão Enviar</small>
         </form>
-        <div>
-          { isSessionBlockedRef.current ? (
-            <div>
-              Sessão bloqueada por {} segundos.
-            </div>
-          ) : (
-            <div>Sessão desbloqueada.</div>
-          )}
-    </div>
         </>
     );
 }
