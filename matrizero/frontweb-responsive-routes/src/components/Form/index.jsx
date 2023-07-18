@@ -50,11 +50,11 @@ function FormEmail() {
 
 function verify(){
         
-  if(name.length < 5){console.log("nome maior que 3", name.length);  setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{console.log("nome menorr ou igual a 3", name.length)}
+  if(name.length < 5){setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{}
   if(email.length < 8 || !email.includes("@")){setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
   if(phone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
   if(subject.length < 5){setMessageSubject(true); setTimeout( () => {setMessageSubject(false)},10000);}
-  if(message.length < 10){console.log("message menor que 10", message.length);  setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}else{console.log("message maior ou igual a 4", message.length)}
+  if(message.length < 10){setMessageMessage(true); setTimeout( () => {setMessageMessage(false)},10000);}else{}
   if(!isValid){setMessageIsValid(true); setTimeout( () => {setMessageIsValid(false)},10000);}
 
 
@@ -81,23 +81,33 @@ function verify(){
 
 function handleSubmit(event) {
   rest = Number(localStorage.getItem('duration')) - Date.now()
-  console.log("rest:", rest)
-  console.log("Agora:", Date.now())
-  console.log("Duracao:", Number(localStorage.getItem('duration')))
+  //console.log("rest:", rest)
+  //console.log("Agora:", Date.now())
+  //console.log("Duracao:", Number(localStorage.getItem('duration')))
 
   event.preventDefault();
   if(rest>0){
-    console.log("rest of session: ", rest)
+    //console.log("rest of session: ", rest)
     
   }else{
       isSessionBlockedRef.current = false
-      console.log("desblocked, passed: ", rest)
+      //console.log("desblocked, passed: ", rest)
       localStorage.removeItem('duration')
       event.preventDefault();
 
       // Enviar dados para o SheetDB API usando fetch
-      /*
-      const url = 'https://sheetdb.io/api/v1/v89vx00xbrigs';
+      
+      let url = '';
+
+        if(new Date().getDay()===0){url = 'https://sheetdb.io/api/v1/v89vx00xbrigs'}
+        if(new Date().getDay()===1){url = 'https://sheetdb.io/api/v1/v89vx00xbrigs'}
+        if(new Date().getDay()===2){url = 'https://sheetdb.io/api/v1/v89vx00xbrigs'}
+        if(new Date().getDay()===3){url = 'https://sheetdb.io/api/v1/v89vx00xbrigs'}
+        if(new Date().getDay()===4){url = 'https://sheetdb.io/api/v1/v89vx00xbrigs'}
+        if(new Date().getDay()===5){url = 'https://sheetdb.io/api/v1/v89vx00xbrigs'}
+        if(new Date().getDay()===6){url = 'https://sheetdb.io/api/v1/v89vx00xbrigs'}
+
+        
       const data = { name, email, phone, subject, message, confirm };
       fetch(url, {
         method: 'POST',
@@ -117,7 +127,7 @@ function handleSubmit(event) {
         .catch(error => {
           console.error(error);
         });
-    */
+    
       }
   }
   
@@ -178,14 +188,14 @@ function handleSubmit(event) {
 
   function verifySession(){
    
-    console.log("Agora:", Date.now())
-    console.log("Duracao:", Number(localStorage.getItem('duration')))
-    console.log(Number(localStorage.getItem('duration')) - Date.now())
+    //console.log("Agora:", Date.now())
+    //console.log("Duracao:", Number(localStorage.getItem('duration')))
+    //console.log(Number(localStorage.getItem('duration')) - Date.now())
     if(Number(localStorage.getItem('duration')) - Date.now() >0){
       
       }else{
         localStorage.removeItem('duration')
-        console.log("rest of session: ", rest)
+        //console.log("rest of session: ", rest)
         //setIsSessionBlocked(false);
         isSessionBlockedRef.current = false;
     }
@@ -195,7 +205,7 @@ function handleSubmit(event) {
     if(chances === 0){
       isSessionBlockedRef.current = true
       localStorage.setItem('time', Date.now());
-      localStorage.setItem('duration', Date.now() + 1 * 60 * 1000);
+      localStorage.setItem('duration', Date.now() + 5 * 60 * 1000);
     }
   }, [chances]);
 
