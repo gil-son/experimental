@@ -1,4 +1,4 @@
-import ImgCourse from '../../assets/images/remote.png';
+import ImgCourse from '../../assets/images/devs.png';
 import ButtonIcon from 'components/ButtonIcon';
 import { GridExample, AnimatedCard, MultiCards } from 'components/Card';
 import RadarChartWorks from 'components/Progress/index';
@@ -51,6 +51,29 @@ const Home = () => {
           <div className="home-image-container">
             <img src={ImgCourse}/>
           </div>
+        </div>
+      </div>
+
+
+      <div className={`aaa`}>
+        <div className="bbb">
+          <div className="ccc">
+              <div className='row d-flex justify-content-center'>
+
+              <div className='col-5 border border-success'>
+              <div className="ddd-content">
+                
+              </div>
+              </div>
+              <div className='col-5 border border-success'>
+              <div className="ddd-img">
+            <img src={ImgCourse}/>
+          </div>
+
+              </div>
+              </div>
+
+            </div>
         </div>
       </div>
 
