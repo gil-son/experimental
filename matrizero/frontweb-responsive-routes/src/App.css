@@ -25,3 +25,14 @@ a:hover {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
+
+
+.bbb{
+  background-color: #fff;
+  background-color: rgb(184, 165, 165);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+
+  border-radius: 20px;
+  width: 95%;
+  margin: auto;
+}

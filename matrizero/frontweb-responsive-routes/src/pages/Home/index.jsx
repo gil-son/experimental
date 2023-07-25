@@ -32,50 +32,39 @@ const Home = () => {
 
   return (
     <>
-      <div className={`home-container`}>
-        <div className="base-card home-card">
-          <div className="home-content-container">
-            <div>
-              <Circle />
-              <h1>Conheça o melhor catálogo de cursos</h1>
-              <p>
-                Desenvolvemos cursos com situações do mercado. E, cada curso é sempre renovado! Estudo individual ou em grupo!
-              </p>
-            </div>
-            <div>
-              <Link to="/programacao">
-                <ButtonIcon />
-              </Link>
-            </div>
-          </div>
-          <div className="home-image-container">
-            <img src={ImgCourse}/>
-          </div>
-        </div>
+
+   
+      
+
+
+
+<div className="aaa">
+  <div className='row d-flex justify-content-around'>
+  
+    {/* Coluna que será a segunda coluna em dispositivos sm */}
+    <div className='col-sm-12 col-lg-5 order-sm-2'>
+      <div className="ddd-img">
+        <img src={ImgCourse}/>
       </div>
-
-
-      <div className={`aaa`}>
-        <div className="bbb">
-          <div className="ccc">
-              <div className='row d-flex justify-content-center'>
-
-              <div className='col-5 border border-success'>
-              <div className="ddd-content">
-                
-              </div>
-              </div>
-              <div className='col-5 border border-success'>
-              <div className="ddd-img">
-            <img src={ImgCourse}/>
-          </div>
-
-              </div>
-              </div>
-
-            </div>
-        </div>
+    </div>
+    
+    {/* Coluna que será a primeira coluna em dispositivos sm */}
+    <div className='col-sm-12 col-lg-5 order-sm-1'>
+      <div className="ddd-content border boder-danger">
+        {/* Conteúdo da primeira coluna */}
       </div>
+      
+      <div className="ddd-content">
+        {/* Conteúdo da primeira coluna */}
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+
+      
 
       <div className={`home-container`}>
       <div className="container ">
@@ -114,7 +103,27 @@ const Home = () => {
         </div>
       </div>
 
-
+      <div className={`home-container`}>
+        <div className="base-card home-card">
+          <div className="home-content-container">
+            <div>
+              <Circle />
+              <h1>Conheça o melhor catálogo de cursos</h1>
+              <p>
+                Desenvolvemos cursos com situações do mercado. E, cada curso é sempre renovado! Estudo individual ou em grupo!
+              </p>
+            </div>
+            <div>
+              <Link to="/programacao">
+                <ButtonIcon />
+              </Link>
+            </div>
+          </div>
+          <div className="home-image-container">
+            <img src={ImgCourse}/>
+          </div>
+        </div>
+      </div>
       
       
     </>
