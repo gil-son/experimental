@@ -38,92 +38,35 @@ const Home = () => {
 
 
 
-<div className="aaa">
-  <div className='row d-flex justify-content-around'>
+
+  <div className='bbb'>
   
-    {/* Coluna que será a segunda coluna em dispositivos sm */}
-    <div className='col-sm-12 col-lg-5 order-sm-2'>
-      <div className="ddd-img">
+
+    
+    <div className='ccc'>
+      <div className="image">
         <img src={ImgCourse}/>
       </div>
-    </div>
-    
-    {/* Coluna que será a primeira coluna em dispositivos sm */}
-    <div className='col-sm-12 col-lg-5 order-sm-1'>
-      <div className="ddd-content border boder-danger">
-        {/* Conteúdo da primeira coluna */}
+      <div className="the-content">
+          <h1>O melhor catálogo de cursos</h1>
+          <p>
+            Desenvolvemos cursos com situações do mercado. E, cada curso é sempre renovado! Estudo individual ou em grupo!
+          </p>
       </div>
-      
-      <div className="ddd-content">
-        {/* Conteúdo da primeira coluna */}
+      <div className="the-content bb">
+            <Link to="/programacao">
+              <ButtonIcon />
+            </Link>
       </div>
     </div>
   
   </div>
-</div>
+
 
 
 
       
 
-      <div className={`home-container`}>
-      <div className="container ">
-        <div className="row mt-5">
-          < MultiCards />
-        </div>
-        
-        </div>
-      </div>
-
-      <div className={`home-container d-flex`}>
-  <div className="row flex-column flex-md-row flex-grow-1">
-    <div className="col col-sm-12 col-md-6 d-flex">
-      <GridExample />
-    </div>
-    <div className="col col-sm-12 col-md-6 d-flex">
-      <AnimatedCard />
-    </div>
-  </div>
-</div>
-
-
-      <div className={`home-container`}>
-        <div className="base-card home-card">
-          <div className="home-content-container">
-          
-            <h1>Carreiras Nacionais e Internacionais!</h1>
-              <p>
-                Em média os alunos que fizeram algum de nossos cursos tendem a trabalhar nesses locais ou plataformas
-              </p>
-          
-          </div>
-          <div className="home-content-container chart">
-          <RadarChartWorks />
-          </div>
-        </div>
-      </div>
-
-      <div className={`home-container`}>
-        <div className="base-card home-card">
-          <div className="home-content-container">
-            <div>
-              <Circle />
-              <h1>Conheça o melhor catálogo de cursos</h1>
-              <p>
-                Desenvolvemos cursos com situações do mercado. E, cada curso é sempre renovado! Estudo individual ou em grupo!
-              </p>
-            </div>
-            <div>
-              <Link to="/programacao">
-                <ButtonIcon />
-              </Link>
-            </div>
-          </div>
-          <div className="home-image-container">
-            <img src={ImgCourse}/>
-          </div>
-        </div>
-      </div>
       
       
     </>
