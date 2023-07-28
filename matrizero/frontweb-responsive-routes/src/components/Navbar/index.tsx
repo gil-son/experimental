@@ -1,14 +1,19 @@
 import './styles.css';
 import 'bootstrap/js/src/collapse.js';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { changeStyle } from 'redux/slice';
 import OnOff from './../../assets/images/on-off.png';
+import languagePt from './../../assets/images/pt.png';
+import languageEng from './../../assets/images/eng.png';
+import { changeLanguage } from 'redux/sliceLanguage';
 
 const Navbar = () => {
 
   let [ style, setStyle] = useState("secondary");
+  let [ language, setLanguage] = useState(true);
+
   let [ count, setCount] = useState(0);
   let dispatch = useDispatch();
   
@@ -26,6 +31,13 @@ const Navbar = () => {
     }
     
   }
+
+  const handleLanguage = () => {
+    setLanguage(!language)
+    console.log(dispatch(changeLanguage(language)).payload)
+  }
+
+  
 
   return (
     <nav className={`navbar navbar-expand-md navbar-dark main-nav border border-white rounded`}>
@@ -50,26 +62,29 @@ const Navbar = () => {
           <ul className="navbar-nav offset-md-2 main-menu">
             <li >
               <NavLink to="/" activeClassName="active" exact>
-                HOME
+                {language ? (<>INÍCIO</>) : (<>HOME</>) }
               </NavLink>
             </li>
             <li>
               <NavLink to="/programacao" activeClassName="active">
-                PROGRAMAÇÃO
+                {language ? (<>PROGRAMAÇÃO</>) : (<>PROGRAMMING</>) }
               </NavLink>
             </li>
             <li>
               <NavLink to="/linguas" activeClassName="active">
-                LINGUAS
+              {language ? (<>LINGUAS</>) : (<>LANGUAGES</>) }
               </NavLink>
             </li>
             <li>
               <NavLink to="/contatos" activeClassName="active">
-                CONTATOS
+              {language ? (<>CONTATOS</>) : (<>CONTACTS</>) }
               </NavLink>
             </li>
             <li>
               <img style={{ cursor: 'pointer'}} src={OnOff} onClick={handleStyle} alt="Card image cap" />
+            </li>
+            <li>
+            <img style={{ cursor: 'pointer'}} src={language ?  languageEng : languagePt } onClick={handleLanguage} alt="Card image cap" />
             </li>
           </ul>
         </div>
