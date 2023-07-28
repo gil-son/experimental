@@ -24,3 +24,11 @@
     font-size: 48px;
     font-weight: bold;
 }
+
+@media (max-width: 1200px) {
+.card-title{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+}

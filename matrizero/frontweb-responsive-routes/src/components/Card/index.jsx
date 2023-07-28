@@ -45,7 +45,7 @@ export function AnimatedCard(){
     <Card className='w-100'>
       <Card.Img variant="top" src="" />
       <Card.Body>
-        <Card.Title className='card-title'>Novidades a caminho!</Card.Title>
+        <Card.Title className='card-title'><center>Novidades a caminho!</center></Card.Title>
         <Card.Text className='card-one'>
         <br/>
         <p>
@@ -71,7 +71,7 @@ export function AnimatedCard(){
         Prepare-se para embarcar nessa jornada incrível rumo ao sucesso na carreira de desenvolvimento, com a Matrizero ao seu lado! Clique no botão abaixo e junte-se a nós nessa aventura!
         </p>
         </Card.Text>
-        <ModalNotification/>
+        <center><ModalNotification/></center>
       </Card.Body>
     </Card>
   );

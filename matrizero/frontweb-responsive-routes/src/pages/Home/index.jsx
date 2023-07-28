@@ -69,7 +69,7 @@ const Home = () => {
 
   <div className={`home-container`}>
       <div className="container ">
-        <div className="row">
+        <div className="row mb-2">
           < MultiCards />
         </div>
         
@@ -96,12 +96,14 @@ const Home = () => {
       </div>
       <div className="the-content">
           <h1>Alunos nacionais e Internacionais</h1>
-          <p>
-            A Matrizero atende alunos de diversas partes do mundo! Desenvolvemos conteúdos em inglês e português.
-          </p>
+         
 
           <p>
             Esse são os locais mais comuns que as oportunidades tendem a aparecer!
+          </p>
+
+          <p>
+            A Matrizero atende alunos de diversas partes do mundo! Desenvolvemos conteúdos em inglês e português.
           </p>
       </div>
 
