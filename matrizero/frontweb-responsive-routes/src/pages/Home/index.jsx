@@ -36,11 +36,11 @@ const Home = () => {
 
 
   const id = useRef("english"); // nesse caso pode ser o state
-
+/*
   useEffect(() => {
       console.log(window.location.hash)
   });
-
+  */
 
   return (
     <>

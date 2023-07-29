@@ -1,6 +1,6 @@
 import './styles.css';
 import 'bootstrap/js/src/collapse.js';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { changeStyle } from 'redux/slice';
@@ -17,7 +17,13 @@ const Navbar = () => {
   let [ count, setCount] = useState(0);
   let dispatch = useDispatch();
   
-  
+  const id = useRef("english"); // nesse caso pode ser o state
+
+  useEffect(() => {
+      console.log(window.location.hash)
+      if(window.location.hash.slice(1) == id.current){setLanguage(false)}
+  });
+
   const handleStyle = () => {
     if(count % 2 == 0){
       setStyle("secondary")
