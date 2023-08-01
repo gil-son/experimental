@@ -2,14 +2,25 @@ import './styles.css';
 import 'bootstrap/js/src/collapse.js';
 import { useDispatch } from 'react-redux';
 import { changeStyle } from 'redux/slice';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
+
+  const year = new Date().getFullYear();
 
   let [ style, setStyle] = useState("secondary");
   let [ count, setCount] = useState(0);
   let dispatch = useDispatch();
   
+  let state = useSelector( state => state);
+  var verify =  JSON.stringify(state);
+  const obj = JSON.parse(verify)
+
+  let [ language, setLanguage] = useState(obj.mylanguage.language);
+    useEffect(() => {
+      setLanguage(!language)
+   },[obj.mylanguage.language]);
   
   const handleStyle = () => {
     if(count % 2 == 0){
@@ -22,7 +33,6 @@ const Footer = () => {
       console.log(dispatch(changeStyle(style)).payload)
       setCount(count+1)
     }
-    
   }
 
   return (
@@ -75,27 +85,25 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-md-4 col-sm-12 text-center">
-            <h5>Informações</h5>
+            <h5>{language ? (<>Informações</>) : (<>Informations</>)}</h5>
             <ul className="list-unstyled">
-              <li><a href="#">Sobre nós</a></li>
-              <li><a href="https://apoia.se/matrizero" target="_blank">Apoia-se</a></li>
-              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">{language ? (<>Sobre nós</>) : (<>About us</>)}</a></li>
+              <li><a href="https://apoia.se/matrizero" target="_blank">{language ? (<>Apoia-se</>) : (<>Donate</>)}</a></li>
+              <li><a href="#">{language ? (<>Política de Privacidade</>) : (<>Privacy Policy</>)}</a></li>
             </ul>
           </div>
           <div className="col-md-4 col-sm-12 text-center">
-            <h5>Contato</h5>
+            <h5>{language ? (<>Contatos</>) : (<>Contacts</>)}</h5>
             <ul className="list-unstyled">
               <li><a href="tel:11 94053-4609">11 94053-4609</a></li>
               <li><a href="mailto:gilson@matrizero.com.br">gilson@matrizero.com.br</a></li>
               <li><a href="#">São Paulo - SP, 02675-031</a></li>
             </ul>
           </div>
-          <p className="mt-2 text-center">© 2023 Matrizero. All rights reserved.</p>
+          <p className="mt-2 text-center">© {year} {language ? (<>Matrizero. Todos os direitos reservados.</>) : (<>Matrizero. All rights reserved.</>)}</p>
         </div>
       </div>
     </footer>
-
-
   );
 };
 

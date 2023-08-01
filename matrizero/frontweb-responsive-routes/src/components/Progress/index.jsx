@@ -12,8 +12,8 @@ export const RadarChartWorks = () => {
 
   const [language, setLanguage] = useState(obj.mylanguage.language);
 
-  const arrayPt = ['BANCOS', 'E-COMMERCE', 'STARTUPS', 'OUTROS', 'FREELANCER', 'STREAMS'];
-  const arrayEng = ['BANKS', 'E-COMMERCE', 'STARTUPS', 'OTHERS', 'FREELANCER', 'STREAMS'];
+  const arrayPt = ['BANCOS', 'E-COMMERCES', 'STARTUPS', 'OUTROS', 'FREELANCES', 'STREAMS'];
+  const arrayEng = ['BANKS', 'E-COMMERCES', 'STARTUPS', 'OTHERS', 'FREELANCES', 'STREAMS'];
 
   const infoNacionalPt = '% DE ALUNOS NACIONAIS TRABALHAM EM'
   const infoInternacionalPt = '% DE ALUNOS INTERNACIONAIS TRABALHAM EM'

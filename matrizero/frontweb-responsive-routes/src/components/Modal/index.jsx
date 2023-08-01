@@ -1,9 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import {Button, Modal} from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './style.css';
 
 function ModalNotification() {
+
+  let dispatch = useDispatch();
+
+  let state = useSelector( state => state);
+  var verify =  JSON.stringify(state);
+  const obj = JSON.parse(verify)
+
+  let [ language, setLanguage] = useState(obj.mylanguage.language);
+
+
+
   const isSessionBlockedRef = useRef(0);
   let [rest, setRest] = useState(0);
 
@@ -174,6 +187,10 @@ function handleSubmit(event) {
     setCircles(shuffledCircles);
   }, []);
 
+  useEffect(() => {
+    setLanguage(!language)
+  },[obj.mylanguage.language]);
+
   function verifySession(){
    
     //console.log("Agora:", Date.now())
@@ -251,7 +268,8 @@ function handleSubmit(event) {
   return (
     <>
       <Button variant="secondary" onClick={handleShow} className="custom-button shadow">
-        QUERO RECEBER E-MAILS COM NOVIDADES
+        
+        {language ? (<>QUERO RECEBER E-MAILS COM NOVIDADES</>) : (<>I WANT TO RECEIVE E-MAILS WITH NEWS</>)}
       </Button>
 
       <Modal show={show} onHide={handleClose}>

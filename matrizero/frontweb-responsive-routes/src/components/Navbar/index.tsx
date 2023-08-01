@@ -87,7 +87,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/linguas" activeClassName="active">
-              {language ? (<>LINGUAS</>) : (<>LANGUAGES</>) }
+              {language ? (<>LÍNGUAS</>) : (<>LANGUAGES</>) }
               </NavLink>
             </li>
             </>) : <></>}
