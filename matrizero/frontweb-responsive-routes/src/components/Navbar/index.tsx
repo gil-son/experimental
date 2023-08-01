@@ -71,6 +71,7 @@ const Navbar = () => {
                 {language ? (<>INÍCIO</>) : (<>HOME</>) }
               </NavLink>
             </li>
+            {language ? (<>
             <li>
               <NavLink to="/programacao" activeClassName="active">
                 {language ? (<>PROGRAMAÇÃO</>) : (<>PROGRAMMING</>) }
@@ -81,6 +82,16 @@ const Navbar = () => {
               {language ? (<>LINGUAS</>) : (<>LANGUAGES</>) }
               </NavLink>
             </li>
+            </>) : <></>}
+            {
+              /*
+            <li>
+              <NavLink to="/contatos" activeClassName="active">
+              {language ? (<>SOBRE</>) : (<>ABOUT</>) }
+              </NavLink>
+            </li>
+            </>
+            */}
             <li>
               <NavLink to="/contatos" activeClassName="active">
               {language ? (<>CONTATOS</>) : (<>CONTACTS</>) }
