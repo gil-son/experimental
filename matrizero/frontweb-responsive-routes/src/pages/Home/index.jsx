@@ -6,7 +6,7 @@
   import { Link } from 'react-router-dom';
   import { useDispatch } from 'react-redux';
   import { changeStyle } from 'redux/slice';
-  import {useState, useEffect, useRef} from 'react';
+  import {useState, useEffect} from 'react';
   import { useSelector } from 'react-redux';
   
   import './styles.css';
@@ -35,12 +35,14 @@
   
     let [ language, setLanguage] = useState(obj.mylanguage.language);
     
-    const id = useRef("english"); // nesse caso pode ser o state
+   
     
   
     useEffect(() => {
        setLanguage(!language)
     },[obj.mylanguage.language]);
+    
+
     
   
     return (
@@ -103,22 +105,32 @@
   
   
   
-        <div className='bbb' id={id.current}>
+        <div className='bbb'>
       <div className='ccc'>
         <div className="image chart">
               <RadarChartWorks />
         </div>
         <div className="the-content">
-            <h1>Alunos nacionais e Internacionais</h1>
-           
+        {language ? 
+            (<>
+              <h1>Alunos nacionais e Internacionais</h1>
+              <p>
+               Esse são os locais mais comuns que as oportunidades tendem a aparecer!
+              </p>
+              <p>
+                A Matrizero atende alunos de diversas partes do mundo! Desenvolvemos conteúdos em inglês e português.
+              </p>
+            </>) : (<>
+              <h1>Students from different parts of the world</h1>
+               <p>
+                 These are the most common places opportunities tend to appear!
+               </p>
+               <p>
+                 Matrizero serves students from all over the world! We develop content in English and Portuguese.
+               </p>          
+            </>)
   
-            <p>
-              Esse são os locais mais comuns que as oportunidades tendem a aparecer!
-            </p>
-  
-            <p>
-              A Matrizero atende alunos de diversas partes do mundo! Desenvolvemos conteúdos em inglês e português.
-            </p>
+            }
         </div>
   
       </div>

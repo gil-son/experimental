@@ -42,8 +42,16 @@ const Navbar = () => {
     setLanguage(!language)
     console.log(dispatch(changeLanguage(language)).payload)
   }
-
   
+  /*
+  function verifyUrl(){
+    if(window.location.hash.slice(1) == "english"){
+      setLanguage(false)
+      //obj.mylanguage.language = language
+      dispatch(changeLanguage(language))
+    }
+  }
+  */
 
   return (
     <nav className={`navbar navbar-expand-md navbar-dark main-nav border border-white rounded`}>
