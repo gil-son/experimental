@@ -2,9 +2,12 @@ import ModalNotification from 'components/Modal';
 import { Carousel } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import './style.css';
-import ImgJava from '../../assets/images/java_em_breve.gif';
-import ImgSpringBoot from '../../assets/images/springboot_em_breve.gif';
-import ImgApacheCamel from '../../assets/images/apachecamel.gif';
+import ImgJavaEng from '../../assets/images/java_animated_eng.gif';
+import ImgSpringBootEng from '../../assets/images/spring_animated_eng.gif';
+import ImgApacheCamelEng from '../../assets/images/camel_animated_eng.gif';
+import ImgJavaPt from '../../assets/images/java_animated_pt.gif';
+import ImgSpringBootPt from '../../assets/images/spring_animated_pt.gif';
+import ImgApacheCamelPt from '../../assets/images/camel_animated_pt.gif';
 import Carrousel2 from '../../assets/images/carrosel2.png';
 import Carrousel4 from '../../assets/images/carrosel4.png';
 import {useState, useEffect} from 'react';
@@ -140,7 +143,7 @@ export function MultiCards() {
         <div className="card">
 
           <a href="https://matrizero.com.br/programacao" target='_blank'>
-            <img className="card-img-top" src={ImgApacheCamel} alt="Card image cap" />
+            <img className="card-img-top" src={language ? ImgApacheCamelPt : ImgApacheCamelEng} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-multiples-titles">Apache Camel</h5>
               <p className="card-multiples">
@@ -157,7 +160,7 @@ export function MultiCards() {
       <div className="col-sm">
         <div className="card">
           <a href="https://www.youtube.com/@matrizero230/playlists" target='_blank'>
-            <img className="card-img-top" src={ImgJava} alt="Card image cap" />
+            <img className="card-img-top" src={language ? ImgJavaPt : ImgJavaEng } alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-multiples-titles">Java</h5>
               <p className="card-multiples">
@@ -176,7 +179,7 @@ export function MultiCards() {
       <div className="col-sm">
         <div className="card">
           <a href="https://www.youtube.com/@matrizero230/playlists" target='_blank'>
-            <img className="card-img-top" src={ImgSpringBoot} alt="Card image cap" />
+            <img className="card-img-top" src={language ? ImgSpringBootPt : ImgSpringBootEng} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-multiples-titles">Spring Boot</h5>
               <p className="card-multiples">
