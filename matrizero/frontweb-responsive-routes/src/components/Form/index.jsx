@@ -32,8 +32,8 @@ function FormEmail() {
     const history = useHistory();
 
     let state = useSelector( state => state);
-    var verify =  JSON.stringify(state);
-    const obj = JSON.parse(verify)
+    var theverify =  JSON.stringify(state);
+    const obj = JSON.parse(theverify)
   
     let [ language, setLanguage] = useState(obj.mylanguage.language);
   
@@ -61,7 +61,7 @@ function FormEmail() {
     }
 
 function verify(){
-        
+  console.log("...........v")      
   if(name.length < 5){setMessageName(true); setTimeout( () => {setMessageName(false)},10000);}else{}
   if(email.length < 8 || !email.includes("@")){setMessageEmail(true); setTimeout( () => {setMessageEmail(false)},10000);}
   if(phone.length < 11){setMessagePhone(true); setTimeout( () => {setMessagePhone(false)},10000);}
@@ -172,10 +172,10 @@ function handleSubmit(event) {
     
 
     function handleConfirmChange() {
-        
+      console.log(";;;;;;;;")
     if(document.getElementById("exampleCheck1").checked==true){
         setConfirm(true);
-        verify()
+        verify();
     }else{
         setCheckBlockSend(true)
     }
@@ -242,11 +242,11 @@ function handleSubmit(event) {
  
 
   const listEmotions = [
-    { id: 1, nome: "emotion nerd", valor: "🤓" },
-    { id: 2, nome: "emotion surpreso", valor: "😲" },
-    { id: 3, nome: "emotion mostrando a lingua", valor: "😝" },
-    { id: 4, nome: "emotion com simples sorriso", valor: "🙂" },
-    { id: 5, nome: "emotion cowboy", valor: "🤠" }
+    { id: 1, nome: "nerd", valor: "🤓" },
+    { id: 2, nome: "chocolate", valor: "🍫" },
+    { id: 3, nome: "sushi", valor: "🍱" },
+    { id: 4, nome: "hamburguer", valor: "🍔" },
+    { id: 5, nome: "cowboy", valor: "🤠" }
   ];
 
  
@@ -346,8 +346,31 @@ function handleSubmit(event) {
                 </div>
               ) : (
                 <>
-                <label>{chances === 0 && 'Verificação falhou. Tente novamente.'}</label>
-                <label>{next && !isValid && chances > 0 && 'Clique no ' + SorteiaNome()}</label>
+                <label>
+                {language ? (
+                  
+                  chances === 0 && 'Verificação falhou. Tente novamente.'
+                
+                ) : (
+                
+                  chances === 0 && 'Verification failed. Try again.'
+                
+                )}
+                  
+                  
+                  </label>
+                <label>
+                  {language ? (
+                  
+                    next && !isValid && chances > 0 && 'Clique no ' + SorteiaNome()
+                  
+                  ) : (
+                  
+                    next && !isValid && chances > 0 && 'Click on the ' + SorteiaNome()
+                  
+                  )}
+                  
+                  </label>
                 
                 </>
               )}
@@ -375,12 +398,12 @@ function handleSubmit(event) {
         </div>
 
         <div class="form-group mt-2">
-            <label for="exampleInputTelefone1">{language ? (<>Assunto</>) : (<>Subject</>)}</label>
+            <label for="exampleInputTelefone1">{language ? ("Assunto") : ("Subject")}</label>
             <input value={subject} type="phone" onChange={handleSubjectChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder={language ? ("Informe o assunto") : ("Inform the subject")}/>
         </div>
 
           <div class="form-group">
-            <label for="exampleInputNome1">{language ? (<>Mensagem</>) : (<>Message</>)}</label>
+            <label for="exampleInputNome1">{language ? ("Mensagem") : ("Message")}</label>
           
             <textarea class="form-control" value={message} onChange={handleMessageChange} type="text" maxlength="150" rows="4" cols="50" placeholder={language ? ("A sua mensagem") : ("Your message")}>
             </textarea>
@@ -396,27 +419,27 @@ function handleSubmit(event) {
             </div>
             
                         {
-                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? (<>O Nome Completo está muito curto</>) : (<>Full Name is too short</>)}</div>
+                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("O Nome Completo está muito curto") : ("Full Name is too short")}</div>
                         }
                         {
-                            messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? (<>Verifique o e-mail</>) : (<>Check the email</>)}</div>
+                            messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o e-mail") : ("Check the email")}</div>
                         }
                         {
-                            messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? (<>Verifique o número de telefone</>) : (<>Check phone number</>)}</div>
+                            messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o número de telefone") : ("Check phone number")}</div>
                         }
                         {
-                            messageIsValid && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? (<>A validação se é humano precisa ser concluida</>) : (<>Validation if it is human needs to be completed</>)}</div>
+                            messageIsValid && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("A validação se é humano precisa ser concluida") : ("Validation if it is human needs to be completed")}</div>
                         }
                         {
-                            messageSubject && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? (<>O Assunto precisa ter o mínimo de 5 caracteres</>) : (<>Subject must be a minimum of 5 characters</>)}</div>
+                            messageSubject && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("O Assunto precisa ter o mínimo de 5 caracteres") : ("Subject must be a minimum of 5 characters")}</div>
                         }
 
                         {
-                            messageMessage && <div className="d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? (<>A mensagem está muito curta</>) : (<>Message is too short</>)}</div>
+                            messageMessage && <div className="d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("A mensagem está muito curta") : ("Message is too short")}</div>
                         }
                                
                         {
-                            messageSending && <div className=" d-flex alert alert-success border border-primary mx-auto my-4 w-100 justify-content-around send-ok shadow" role="alert">{language ? (<>Sucesso! Respondemos em até um dia útil!</>) : (<>Success! We respond within one business day!</>)}</div>
+                            messageSending && <div className=" d-flex alert alert-success border border-primary mx-auto my-4 w-100 justify-content-around send-ok shadow" role="alert">{language ? ("Sucesso! Respondemos em até um dia útil!") : ("Success! We respond within one business day!")}</div>
                         }
                         <small>{language ? (<>Preencha os campos de forma adequada para habilitar o botão Enviar</>) : (<>Fill in the fields appropriately to enable the Submit button</>)}</small>
         </form>
