@@ -10,8 +10,8 @@ function ModalNotification() {
   let dispatch = useDispatch();
 
   let state = useSelector( state => state);
-  var verify =  JSON.stringify(state);
-  const obj = JSON.parse(verify)
+  var theverify =  JSON.stringify(state);
+  const obj = JSON.parse(theverify)
 
   let [ language, setLanguage] = useState(obj.mylanguage.language);
 
@@ -235,11 +235,11 @@ function handleSubmit(event) {
  
 
   const listEmotions = [
-    { id: 1, nome: "emotion nerd", valor: "🤓" },
-    { id: 2, nome: "emotion surpreso", valor: "😲" },
-    { id: 3, nome: "emotion mostrando a lingua", valor: "😝" },
-    { id: 4, nome: "no emotion com simples sorriso", valor: "🙂" },
-    { id: 5, nome: "no emotion cowboy", valor: "🤠" }
+    { id: 1, nome: "nerd", valor: "🤓" },
+    { id: 2, nome: "chocolate", valor: "🍫" },
+    { id: 3, nome: "sushi", valor: "🍱" },
+    { id: 4, nome: "hamburguer", valor: "🍔" },
+    { id: 5, nome: "cowboy", valor: "🤠" }
   ];
 
  
@@ -274,26 +274,26 @@ function handleSubmit(event) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Sobre a proteção da LGPD</Modal.Title>
+          <Modal.Title>{language ? (<>Sobre a proteção da LGPD</>) : (<>Protection under the GDPL</>)} </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           
         <form onSubmit={handleSubmit} onLoad={verifySession()}>
           
           <div class="form-group">
-            <label for="exampleInputNome1">Nome Completo</label>
-            <input value={nome} onChange={handleNomeChange} type="nome" class="form-control" id="exampleInputNome1" aria-describedby="nomeHelp" placeholder="O seu nome completo"/>
+          <label for="exampleInputNome1">{language ? ("Nome Completo") : ("Complete Name")}</label>
+            <input value={nome} onChange={handleNomeChange} type="nome" class="form-control" id="exampleInputNome1" aria-describedby="nomeHelp" placeholder={language ? ("O seu nome completo") : ("Your complete name")}/>
           </div>
 
           <div class="form-group mt-2">
-            <label for="exampleInputEmail1">E-mail</label>
-            <input value={email} type="email" onChange={handleEmailChange} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="O seu melhor e-mail"/>
+            <label for="exampleInputEmail1">{language ? ("E-mail") : ("Email")}</label>
+            <input value={email} type="email" onChange={handleEmailChange} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={language ? ("O seu melhor e-mail") : ("Your best e-mail")}/>
           </div>
           
           
           <div class="form-group mt-2">
-            <label for="exampleInputTelefone1">Celular</label>
-            <input value={telefone} type="telefone" onChange={handleTelefoneChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder="O seu celular com DDD"/>
+            <label for="exampleInputTelefone1">{language ? ("Celular") : ("Cellphone")}</label>
+            <input value={telefone} type="telefone" onChange={handleTelefoneChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder={language ? ("O seu celular com DDD") : ("Your cellphone with area code")}/>
           </div>
 
           <div class="form-group mt-2">
@@ -303,22 +303,22 @@ function handleSubmit(event) {
               {!isValid ? (
                   <>
                   <div>
-                  <label for="exampleInputValidadorDeHumano">Validador de Humano</label>
+                  <label for="exampleInputValidadorDeHumano">{language ? (<>Validador de Humano</>) : (<>Human Validator</>)}</label>
                   </div>
                   <div>
-                  <label>Chances restantes: {chances}</label>
+                  <label>{language ? (<>Chances restantes:</>) : (<>Remaining Chances:</>)} {chances}</label>
                   </div>
                   </>
               ) : (
                 <div>
-                  <label>Etapa Verificada!</label>
+                  <label>{language ? (<>Etapa Verificada!</>) : (<>Step Verified!</>)}</label>
                   </div>
               ) }
               
               {!isHuman && chances > 0 ? (
                 <div>
                   <div>
-                    <label>Clique no círculo verde escuro:</label>
+                  <label>{language ? (<>Clique no círculo verde escuro:</>) : (<>Click the dark green circle:</>)}</label>
                   </div>
                   <div
                     style={{
@@ -349,8 +349,31 @@ function handleSubmit(event) {
                 </div>
               ) : (
                 <>
-                <label>{chances === 0 && 'Verificação falhou. Tente novamente.'}</label>
-                <label>{next && !isValid && chances > 0 && 'Clique no ' + SorteiaNome()}</label>
+                <label>
+                  {language ? (
+                    
+                    chances === 0 && 'Verificação falhou. Tente novamente.'
+                  
+                  ) : (
+                  
+                    chances === 0 && 'Verification failed. Try again.'
+                  
+                  )}
+                </label>
+
+
+                <label>
+                  {language ? (
+                    
+                    next && !isValid && chances > 0 && 'Clique no ' + SorteiaNome()
+                  
+                  ) : (
+                  
+                    next && !isValid && chances > 0 && 'Click on the ' + SorteiaNome()
+                  
+                  )}
+                  
+                  </label>
                 
                 </>
               )}
@@ -358,7 +381,7 @@ function handleSubmit(event) {
             </div>
             ): (
               <div>
-                Você não passou na verificação. Tente novamente em alguns minutos
+                {language ? (<>Você não passou na verificação. Tente novamente em alguns minutos</>) : (<>You failed verification. Try again in a few minutes</>)}
               </div>
             )}
 
@@ -379,32 +402,32 @@ function handleSubmit(event) {
 
           <div class="form-check mt-2">
             <input value={confirma} type="checkbox" onChange={handleConfirmaChange} class="form-check-input" id="exampleCheck1" required/>
-            <label class="form-check-label" for="exampleCheck1">As informações estão protegidas conforme a LGPD n° 13.709/2018  </label>
+            <label class="form-check-label" for="exampleCheck1">{language ? (<>Proteção conforme a LGPD n° 13.709/2018</>) : (<>Protection under the GDPL (General Data Protection Law)</>)}  </label>
           </div>
           
-            <button type="submit" class="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>Enviar</button>
+            <button type="submit" class="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>{language ? (<>Enviar</>) : (<>Send</>)}</button>
             {
-                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">O Nome Completo está muito curto</div>
+                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("O Nome Completo está muito curto") : ("Full Name is too short")}</div>
             }
             {
-                            messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o e-mail</div>
+                            messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o e-mail") : ("Check the email")}</div>
             }
             {
-                            messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Verifique o número de telefone</div>
+                            messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o número de telefone") : ("Check phone number")}</div>
             }
             {
-                            messageIsValid && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">A validação se é humano precisa ser concluida</div>
+                            messageIsValid && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("A validação se é humano precisa ser concluida") : ("Validation if it is human needs to be completed")}</div>
             }
 
             {
-                            messageAgradece && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">Agradecemos !!!</div>
+                            messageAgradece && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Agradecemos a sua mensagem!!!") : ("Thanks for your message !!!")}</div>
             }
-            <small>Preencha os Campos de forma adquada para habilitar o botao Enviar</small>
+            <small>{language ? (<>Preencha os campos de forma adequada para habilitar o botão Enviar</>) : (<>Fill in the fields appropriately to enable the Send button</>)}</small>
         </form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Fechar
+            {language ? ("Fechar") : ("Close")}
           </Button>
         </Modal.Footer>
       </Modal>
