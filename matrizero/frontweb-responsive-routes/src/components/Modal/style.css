@@ -6,11 +6,34 @@
     padding: 10px 20px;
     border-radius: 5px;
     height: 8vh;
+    margin: auto;
+    width: 90%;
     transition: transform 0.3s ease;
   }
   
   .custom-button:hover {
     background-color: #220a2d;
+    border-color: #220a2d;
+    transform: scale(1.1);
+  }
+
+
+  .custom-button-free {
+    background-color: #ffffff;
+    color: #050505;
+    border-color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    height: 8vh;
+    margin: auto;
+    width: 90%;
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-button-free:hover {
+    background-color: #ffffff;
+    color: #050505;
     border-color: #220a2d;
     transform: scale(1.1);
   }

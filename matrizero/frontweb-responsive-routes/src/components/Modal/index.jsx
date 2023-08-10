@@ -1,11 +1,101 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import {Button, Modal} from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './style.css';
 
-function ModalNotification() {
+
+
+
+export const ModalCourses = (props) => {
+
+  let dispatch = useDispatch();
+
+  let state = useSelector( state => state);
+  var theverify =  JSON.stringify(state);
+  const obj = JSON.parse(theverify)
+
+  const [show, setShow] = useState(false);
+  let [ language, setLanguage] = useState(obj.mylanguage.language);
+
+  useEffect(() => {
+    setLanguage(!language)
+  },[obj.mylanguage.language]);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+
+  return(<>
+    <Button variant="secondary" onClick={handleShow} className="custom-button shadow mb-2">
+        
+        {language ? (<>ESPECIALIZAÇÃO</>) : (<>SPECIALIZATION</>)}
+
+      </Button>
+
+      <Modal show={show} fullscreen={true} onHide={handleClose} className="custom-modal" >
+        <Modal.Header closeButton>
+          <Modal.Title>{language ? (<>ESPECIALIZAÇÃO EM APACHE CAMEL</>) : (<>APACHE CAMEL SPECIALIZATION</>)} </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+           a? {props.content}
+        </Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" >
+                
+            </Button>
+        </Modal.Footer>    
+      </Modal>
+  </>);
+}
+
+
+export const ModalCoursesFree = (props) => {
+
+  let dispatch = useDispatch();
+
+  let state = useSelector( state => state);
+  var theverify =  JSON.stringify(state);
+  const obj = JSON.parse(theverify)
+
+  const [show, setShow] = useState(false);
+  let [ language, setLanguage] = useState(obj.mylanguage.language);
+
+  useEffect(() => {
+    setLanguage(!language)
+  },[obj.mylanguage.language]);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+
+  return(<>
+    <Button variant="secondary" onClick={handleShow} className="custom-button-free shadow mb-2">
+        
+        {language ? (<>FUNDAMENTOS</>) : (<>FUNDATIONS</>)}
+
+      </Button>
+
+      <Modal show={show} fullscreen={true} onHide={handleClose} className="custom-modal" >
+        <Modal.Header closeButton>
+          <Modal.Title>{language ? (<>FUNDAMENTOS EM APACHE CAMEL</>) : (<>APACHE CAMEL FUNDATIONS</>)} </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+           a? {props.content}
+        </Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" >
+                
+            </Button>
+        </Modal.Footer>    
+      </Modal>
+  </>);
+}
+
+
+export const ModalNotification = () => {
 
   let dispatch = useDispatch();
 
@@ -280,23 +370,23 @@ function handleSubmit(event) {
           
         <form onSubmit={handleSubmit} onLoad={verifySession()}>
           
-          <div class="form-group">
+          <div className="form-group">
           <label for="exampleInputNome1">{language ? ("Nome Completo") : ("Complete Name")}</label>
-            <input value={nome} onChange={handleNomeChange} type="nome" class="form-control" id="exampleInputNome1" aria-describedby="nomeHelp" placeholder={language ? ("O seu nome completo") : ("Your complete name")}/>
+            <input value={nome} onChange={handleNomeChange} type="nome" className="form-control" id="exampleInputNome1" aria-describedby="nomeHelp" placeholder={language ? ("O seu nome completo") : ("Your complete name")}/>
           </div>
 
-          <div class="form-group mt-2">
+          <div className="form-group mt-2">
             <label for="exampleInputEmail1">{language ? ("E-mail") : ("Email")}</label>
-            <input value={email} type="email" onChange={handleEmailChange} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={language ? ("O seu melhor e-mail") : ("Your best e-mail")}/>
+            <input value={email} type="email" onChange={handleEmailChange} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={language ? ("O seu melhor e-mail") : ("Your best e-mail")}/>
           </div>
           
           
-          <div class="form-group mt-2">
+          <div className="form-group mt-2">
             <label for="exampleInputTelefone1">{language ? ("Celular") : ("Cellphone")}</label>
-            <input value={telefone} type="telefone" onChange={handleTelefoneChange} class="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder={language ? ("O seu celular com DDD") : ("Your cellphone with area code")}/>
+            <input value={telefone} type="telefone" onChange={handleTelefoneChange} className="form-control" id="exampleInputTelefone1" aria-describedby="telefoneHelp" placeholder={language ? ("O seu celular com DDD") : ("Your cellphone with area code")}/>
           </div>
 
-          <div class="form-group mt-2">
+          <div className="form-group mt-2">
           
           {localStorage.getItem('duration-event') == null ? (
           <div>
@@ -400,12 +490,12 @@ function handleSubmit(event) {
         </div>
 
 
-          <div class="form-check mt-2">
-            <input value={confirma} type="checkbox" onChange={handleConfirmaChange} class="form-check-input" id="exampleCheck1" required/>
-            <label class="form-check-label" for="exampleCheck1">{language ? (<>Proteção conforme a LGPD n° 13.709/2018</>) : (<>Protection under the GDPL (General Data Protection Law)</>)}  </label>
+          <div className="form-check mt-2">
+            <input value={confirma} type="checkbox" onChange={handleConfirmaChange} className="form-check-input" id="exampleCheck1" required/>
+            <label className="form-check-label" for="exampleCheck1">{language ? (<>Proteção conforme a LGPD n° 13.709/2018</>) : (<>Protection under the GDPL (General Data Protection Law)</>)}  </label>
           </div>
           
-            <button type="submit" class="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>{language ? (<>Enviar</>) : (<>Send</>)}</button>
+            <button type="submit" className="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>{language ? (<>Enviar</>) : (<>Send</>)}</button>
             {
                             messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("O Nome Completo está muito curto") : ("Full Name is too short")}</div>
             }
@@ -435,4 +525,3 @@ function handleSubmit(event) {
   );
 }
 
-export default ModalNotification;

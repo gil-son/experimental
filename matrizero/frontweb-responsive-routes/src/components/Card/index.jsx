@@ -1,4 +1,4 @@
-import ModalNotification from 'components/Modal';
+import { ModalNotification, ModalCourses, ModalCoursesFree } from 'components/Modal';
 import { Carousel } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import './style.css';
@@ -137,12 +137,24 @@ export function MultiCards() {
     setLanguage(!language)
  },[obj.mylanguage.language]);
 
+ const userData = {
+  languagem1: 'Camel',
+  languagem2: 'Java',
+  languagem3: 'Spring Boot'
+};
+
+const freeData = {
+  languagem1: 'Free Camel',
+  languagem2: 'Free Java',
+  languagem3: 'Free Spring Boot'
+};
+
   return (
     <>
       <div className="col-sm">
         <div className="card">
 
-          <a href="https://matrizero.com.br/programacao" target='_blank'>
+          
             <img className="card-img-top" src={language ? ImgApacheCamelPt : ImgApacheCamelEng} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-multiples-titles">Apache Camel</h5>
@@ -154,12 +166,13 @@ export function MultiCards() {
               </p>
               <p className="card-text"><small className="text-muted">{language ? (<>Conteúdo atualizado!</>) : (<>Updated content!</>)}</small></p>
             </div>
-          </a>
+              <ModalCourses content={userData.languagem1}/>
+              <ModalCoursesFree content={freeData.languagem1}/>
         </div>
       </div>
       <div className="col-sm">
         <div className="card">
-          <a href="https://www.youtube.com/@matrizero230/playlists" target='_blank'>
+         
             <img className="card-img-top" src={language ? ImgJavaPt : ImgJavaEng } alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-multiples-titles">Java</h5>
@@ -173,12 +186,12 @@ export function MultiCards() {
               </p>
               <p className="card-text"><small className="text-muted">{language ? (<>Em breve!</>) : (<>Shortly!</>)}</small></p>
             </div>
-          </a>
+            <ModalCourses content={userData.languagem2}/>
+            <ModalCoursesFree content={freeData.languagem2}/>
         </div>
       </div>
       <div className="col-sm">
         <div className="card">
-          <a href="https://www.youtube.com/@matrizero230/playlists" target='_blank'>
             <img className="card-img-top" src={language ? ImgSpringBootPt : ImgSpringBootEng} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-multiples-titles">Spring Boot</h5>
@@ -191,7 +204,8 @@ export function MultiCards() {
               </p>
               <p className="card-text"><small className="text-muted">{language ? (<>Em breve!</>) : (<>Shortly!</>)}</small></p>
             </div>
-          </a>
+            <ModalCourses content={userData.languagem3}/>
+            <ModalCoursesFree content={freeData.languagem3}/>
         </div>
       </div>
     </>
