@@ -4,8 +4,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { CarouselCourses } from '../Carousel';
 import './style.css';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+
 
 
 
@@ -20,6 +19,8 @@ export const ModalCourses = (props) => {
 
   const [show, setShow] = useState(false);
   let [ language, setLanguage] = useState(obj.mylanguage.language);
+  
+  let [image, setImage] = useState(props.content);
 
   useEffect(() => {
     setLanguage(!language)
@@ -28,15 +29,8 @@ export const ModalCourses = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [key, setKey] = useState('home');
-  const [index, setIndex] = useState(0);
-
-  function Convert(k){
-    if(k=="home"){setIndex(0)}
-    if(k=="profile"){setIndex(1)}
-    if(k=="contact"){setIndex(2)}
-  }
-
+  console.log(image);
+  
 
   return(<>
     <Button variant="secondary" onClick={handleShow} className="custom-button shadow mb-2">
@@ -56,30 +50,9 @@ export const ModalCourses = (props) => {
             <section class="container">
               <div className="row">
                 <div class="col-12 col-sm-12 col-md-8 box1 border border-primary">
-                    <div className="row">
-                      <div class="col-12 border border-primary"><CarouselCourses ind={index} /></div>
-                      <div class="col-12 border border-primary">
-                        
-                      <Tabs
-                        id="controlled-tab-example"
-                        activeKey={key}
-                        onSelect={(k) => {setKey(k); Convert(k); console.log("indice:", index)}}
-                        className="mb-3"
-                      >
-                        <Tab eventKey="home" title="Home">
-                          Tab content for Home
-                        </Tab>
-                        <Tab eventKey="profile" title="Profile">
-                          Tab content for Profile
-                        </Tab>
-                        <Tab eventKey="contact" title="Contact" >
-                          Tab content for Contact
-                        </Tab>
-                      </Tabs>
-                        
-                        
-                        </div>
-                    </div>
+                   
+                <CarouselCourses image={image}/>
+
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
                   <div className="row">
