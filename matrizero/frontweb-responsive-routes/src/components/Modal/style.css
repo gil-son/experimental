@@ -37,3 +37,11 @@
     border-color: #220a2d;
     transform: scale(1.1);
   }
+
+  /* Modal Courses + Free */
+
+@media (min-width:750px){
+  .only-mobile{
+    display:none;
+  }
+}

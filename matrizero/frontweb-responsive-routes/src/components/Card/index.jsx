@@ -1,5 +1,4 @@
 import { ModalNotification, ModalCourses, ModalCoursesFree } from 'components/Modal';
-import { Carousel } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import './style.css';
 import ImgJavaEng from '../../assets/images/java_animated_eng.gif';
@@ -8,39 +7,8 @@ import ImgApacheCamelEng from '../../assets/images/camel_animated_eng.gif';
 import ImgJavaPt from '../../assets/images/java_animated_pt.gif';
 import ImgSpringBootPt from '../../assets/images/spring_animated_pt.gif';
 import ImgApacheCamelPt from '../../assets/images/camel_animated_pt.gif';
-import Carrousel2 from '../../assets/images/carrosel2.png';
-import Carrousel4 from '../../assets/images/carrosel4.png';
 import {useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
-
-export function GridExample() {
-  return (
-    <>
-    <Carousel variant="dark">
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={Carrousel2 + '?text=First slide&bg=f5f5f5'}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-         
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={Carrousel4 + '?text=Second slide&bg=eee'}
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <ModalNotification/>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-    </>
-  );
-};
 
 
 export function AnimatedCard(){

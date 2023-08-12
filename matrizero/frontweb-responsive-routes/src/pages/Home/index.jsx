@@ -1,6 +1,7 @@
   import ImgCourse from '../../assets/images/devs.png';
   import ButtonIcon from 'components/ButtonIcon';
-  import { GridExample, AnimatedCard, MultiCards } from 'components/Card';
+  import { AnimatedCard, MultiCards } from 'components/Card';
+  import { CarouselEvent } from 'components/Carousel';
   import RadarChartWorks from 'components/Progress/index';
   import Circle from '../../components/Animate';
   import { Link } from 'react-router-dom';
@@ -95,7 +96,7 @@
         <div className={`home-container d-flex`}>
     <div className="row flex-column flex-md-row flex-grow-1">
       <div className="col col-sm-12 col-md-6 d-flex">
-        <GridExample />
+        <CarouselEvent />
       </div>
       <div className="col col-sm-12 col-md-6 d-flex">
         <AnimatedCard />
