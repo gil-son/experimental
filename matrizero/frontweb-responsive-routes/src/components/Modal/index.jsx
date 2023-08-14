@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { CarouselCourses } from '../Carousel';
+import { ReviewsPagination } from '../Pagination';
 import './style.css';
 
 
@@ -68,20 +69,7 @@ export const ModalCourses = (props) => {
               </div>
               <div className="row">
                 <div className="col border border-danger">
-                  <div className="row">
-                  <div class="col-12 col-sm-3 box3 border border-primary">
-                      <div>Avaliação 1</div>
-                  </div>
-                  <div class="col-12 col-sm-3 box3 border border-primary">
-                      <div>Avaliação 2</div>
-                  </div>
-                  <div class="col-12 col-sm-3 box3 border border-primary">
-                      <div>Avaliação 3</div>
-                  </div>
-                  <div class="col-12 col-sm-3 box3 border border-primary">
-                      <div>Avaliação 4</div>
-                  </div>
-                  </div>
+                  <ReviewsPagination />
                 </div>
               </div>
               <div className="row only-mobile">

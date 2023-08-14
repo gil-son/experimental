@@ -1,0 +1,31 @@
+{
+    "data": [
+      {
+        "rating": 2,
+        "name": "Fábio",
+        "date": "2023-07-28",
+        "message": "Não gostei, veio com defeito."
+      },
+      {
+        "rating": 3,
+        "name": "Renata",
+        "date": "2023-07-27",
+        "message": "Mais ou menos, esperava mais qualidade."
+      },
+      {
+        "rating": 5,
+        "name": "Larissa",
+        "date": "2023-07-26",
+        "message": "Estou impressionada, produto excelente!"
+      },
+      {
+        "rating": 4,
+        "name": "Eduardo",
+        "date": "2023-07-25",
+        "message": "Muito bom, recomendo a todos."
+      }
+    ],
+    "total_pages": 5,
+    "current_page": 5
+  }
+  

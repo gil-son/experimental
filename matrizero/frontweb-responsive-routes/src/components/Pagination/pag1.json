@@ -1,0 +1,31 @@
+{
+    "data": [
+      {
+        "rating": 5,
+        "name": "João",
+        "date": "2023-08-13",
+        "message": "Ótimo produto, estou muito satisfeito!"
+      },
+      {
+        "rating": 4,
+        "name": "Maria",
+        "date": "2023-08-12",
+        "message": "Gostei, mas poderia ser melhor."
+      },
+      {
+        "rating": 3,
+        "name": "Pedro",
+        "date": "2023-08-11",
+        "message": "Mais ou menos, atendeu às expectativas."
+      },
+      {
+        "rating": 5,
+        "name": "Ana",
+        "date": "2023-08-10",
+        "message": "Adorei! Recomendo a todos."
+      }
+    ],
+    "total_pages": 5,
+    "current_page": 1
+  }
+  

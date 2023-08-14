@@ -1,0 +1,31 @@
+{
+    "data": [
+      {
+        "rating": 4,
+        "name": "Gustavo",
+        "date": "2023-08-01",
+        "message": "Bom produto, mas preço um pouco alto."
+      },
+      {
+        "rating": 3,
+        "name": "Juliana",
+        "date": "2023-07-31",
+        "message": "Não sei se compraria novamente."
+      },
+      {
+        "rating": 5,
+        "name": "Roberto",
+        "date": "2023-07-30",
+        "message": "Maravilhoso! Superou minhas expectativas."
+      },
+      {
+        "rating": 4,
+        "name": "Patrícia",
+        "date": "2023-07-29",
+        "message": "Gostei muito, mas demorou um pouco para chegar."
+      }
+    ],
+    "total_pages": 5,
+    "current_page": 4
+  }
+  
