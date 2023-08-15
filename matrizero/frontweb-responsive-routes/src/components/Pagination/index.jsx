@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Pagination from 'react-bootstrap/Pagination';
 import Pg1 from './pag1.json';
 import Pg2 from './pag2.json';
 import Pg3 from './pag3.json';
 import Pg4 from './pag4.json';
 import Pg5 from './pag5.json';
+
+
 export const ReviewsPagination = () => {
   const [reviews, setReviews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -49,6 +52,18 @@ export const ReviewsPagination = () => {
     }
   };
 
+
+
+  let active = 2;
+  let items = [];
+  for (let number = 1; number <= 5; number++) {
+    items.push(
+      <Pagination.Item onClick={ () => handlePageChange(number)} key={number} active={number === currentPage}>
+        {<>{number}</>}
+      </Pagination.Item>
+    );
+  }
+
   return (
     <div>
       <h1>Avaliações:</h1>
@@ -63,11 +78,20 @@ export const ReviewsPagination = () => {
         
      </div>
      
+     {/*
       <div>
         <button onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
         <span>Page {currentPage} of {totalPages}</span>
         <button onClick={() => handlePageChange(currentPage + 1)}>Next</button>
       </div>
+      */
+    }
+
+    <div>
+        <Pagination size="sm">{items}</Pagination>
     </div>
+    </div>
+
+    
   );
 }
