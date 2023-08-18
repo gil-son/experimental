@@ -1,31 +1,30 @@
 {
-    "data": [
-      {
-        "rating": 1,
-        "name": "Fernando",
-        "date": "2023-08-05",
-        "message": "Péssima qualidade, não recomendo de jeito nenhum."
-      },
-      {
-        "rating": 4,
-        "name": "Amanda",
-        "date": "2023-08-04",
-        "message": "Gostei, mas poderia ter mais opções de cores."
-      },
-      {
-        "rating": 5,
-        "name": "Lucas",
-        "date": "2023-08-03",
-        "message": "Perfeito! Superou minhas expectativas."
-      },
-      {
-        "rating": 2,
-        "name": "Letícia",
-        "date": "2023-08-02",
-        "message": "Não gostei do produto, achei frágil."
-      }
-    ],
-    "total_pages": 5,
-    "current_page": 3
-  }
-  
+  "data": [
+    {
+      "rating": 5,
+      "name": "Fernando",
+      "date": "05/08/2023",
+      "message": "Estou impressionado com a qualidade do curso! Recomendo a todos interessados."
+    },
+    {
+      "rating": 5,
+      "name": "Amanda",
+      "date": "04/08/2023",
+      "message": "O curso é muito bom e abrangente, mas mais opções de conteúdo seriam bem-vindas."
+    },
+    {
+      "rating": 5,
+      "name": "Lucas",
+      "date": "03/08/2023",
+      "message": "O curso superou minhas expectativas, especialmente a forma como os tópicos são abordados."
+    },
+    {
+      "rating": 5,
+      "name": "Letícia",
+      "date": "02/08/2023",
+      "message": "Recomendo o curso para quem deseja aprender de forma abrangente e sólida."
+    }
+  ],
+  "total_pages": 5,
+  "current_page": 3
+}
