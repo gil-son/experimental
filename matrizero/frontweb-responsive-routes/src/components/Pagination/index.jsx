@@ -109,7 +109,7 @@ export const ReviewsPagination = () => {
      </div>
      
      
-      <div className='buttons mt-4'>
+      <div className='buttons mt-4 custom-pagination'>
         <img src={Preview} className='previous mb-3' onClick={() => handlePageChange(currentPage - 1)} />
         <Pagination size="sm">{items}</Pagination>
         <img src={Next} className='next mb-3' onClick={() => handlePageChange(currentPage + 1)}/>

@@ -4,6 +4,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { CarouselCourses } from '../Carousel';
 import { ReviewsPagination } from '../Pagination';
+import Accordion from '../Accordion';
 import './style.css';
 
 
@@ -72,6 +73,29 @@ export const ModalCourses = (props) => {
                   <ReviewsPagination />
                 </div>
               </div>
+
+
+              <div className="row">
+                <div class="col-12 col-sm-12 col-md-6 box1 border border-primary">
+                  <h3>Perguntas Comuns:</h3>
+                  <Accordion />
+
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 box2 border border-primary">
+                  <div className="row">
+                     
+                     RIGHT SIDE 
+                    </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
               <div className="row only-mobile">
                 <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
                   <div className="row">

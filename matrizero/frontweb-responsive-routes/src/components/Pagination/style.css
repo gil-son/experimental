@@ -4,6 +4,22 @@
     justify-content:flex-start;
 }
 
+
+/*
+.custom-pagination .page-item.active .page-link {
+    background-color: #230739; 
+    border-color: #230739; 
+    color: #ffffff; 
+  }
+  
+
+  .custom-pagination .page-item .page-link:hover {
+    background-color: #77a4fe; 
+    border-color: #77a4fe;
+    color: white;
+  }
+*/
+
 .previous{
     margin-right: 1vh;
     cursor:pointer;
@@ -16,8 +32,8 @@
 }
 .pageof{
     margin-left: 1vh;
+    color: #230739;
 }
-
 
 .rating-title{
     color:#0D6EFD;
