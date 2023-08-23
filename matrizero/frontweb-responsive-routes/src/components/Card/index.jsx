@@ -1,6 +1,4 @@
 import { ModalNotification, ModalCourses, ModalCoursesFree } from 'components/Modal';
-import Card from 'react-bootstrap/Card';
-import './style.css';
 import ImgJavaEng from '../../assets/images/java_animated_eng.gif';
 import ImgSpringBootEng from '../../assets/images/spring_animated_eng.gif';
 import ImgApacheCamelEng from '../../assets/images/camel_animated_eng.gif';
@@ -9,7 +7,45 @@ import ImgSpringBootPt from '../../assets/images/spring_animated_pt.gif';
 import ImgApacheCamelPt from '../../assets/images/camel_animated_pt.gif';
 import {useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import './style.css';
 
+export const CourseUdemyEduzzHotmartCard = (props) => {
+
+  console.log("images 2:", props.coursename)
+
+  return (
+    <Card>
+      <Card.Title><h3>Curso de {props.coursename} </h3></Card.Title>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Text>
+          Escolha a plataforma que deseja fazer o curso! 
+          Te vejo lá!
+        </Card.Text>
+        <Button variant="primary">Fazer o Curso na Udemy</Button>
+        <Button variant="primary">Fazer o Curso na Eduzz</Button>
+        <Button variant="primary">Fazer o Curso na Hotmart</Button>
+      </Card.Body>
+    </Card>
+  );
+}
+
+export function BasicCard() {
+  return (
+    <Card style={{ width: '22rem', margin: 'auto' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title><h3>Tem alguma dúvida?</h3></Card.Title>
+        <Card.Text>
+          Entre em contato pelo whatsapp clicando no botão abaixo.
+        </Card.Text>
+        <Button variant="primary">Whatsapp</Button>
+      </Card.Body>
+    </Card>
+  );
+}
 
 export function AnimatedCard(){
 
@@ -111,6 +147,12 @@ export function MultiCards() {
   languagem3: 'Spring Boot'
 };
 
+const userImg = {
+  languagem1: 'Camel',
+  languagem2: 'Java',
+  languagem3: 'Spring Boot'
+};
+
 const freeData = {
   languagem1: 'Free Camel',
   languagem2: 'Free Java',
@@ -134,7 +176,7 @@ const freeData = {
               </p>
               <p className="card-text"><small className="text-muted">{language ? (<>Conteúdo atualizado!</>) : (<>Updated content!</>)}</small></p>
             </div>
-              <ModalCourses content={userData.languagem1}/>
+              <ModalCourses content={userData.languagem1} image={userImg.languagem1}/>
               <ModalCoursesFree content={freeData.languagem1}/>
         </div>
       </div>
@@ -154,7 +196,7 @@ const freeData = {
               </p>
               <p className="card-text"><small className="text-muted">{language ? (<>Em breve!</>) : (<>Shortly!</>)}</small></p>
             </div>
-            <ModalCourses content={userData.languagem2}/>
+            <ModalCourses content={userData.languagem2} image={userImg.languagem2}/>
             <ModalCoursesFree content={freeData.languagem2}/>
         </div>
       </div>
@@ -172,7 +214,7 @@ const freeData = {
               </p>
               <p className="card-text"><small className="text-muted">{language ? (<>Em breve!</>) : (<>Shortly!</>)}</small></p>
             </div>
-            <ModalCourses content={userData.languagem3}/>
+            <ModalCourses content={userData.languagem3} image={userImg.languagem3}/>
             <ModalCoursesFree content={freeData.languagem3}/>
         </div>
       </div>

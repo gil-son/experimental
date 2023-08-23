@@ -4,6 +4,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { CarouselCourses } from '../Carousel';
 import { ReviewsPagination } from '../Pagination';
+import { BasicCard, CourseUdemyEduzzHotmartCard } from 'components/Card';
 import Accordion from '../Accordion';
 import './style.css';
 
@@ -11,7 +12,7 @@ import './style.css';
 
 
 
-export const ModalCourses = (props) => {
+export const ModalCourses = ({...props}) => {
 
   let dispatch = useDispatch();
 
@@ -31,7 +32,8 @@ export const ModalCourses = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log(image);
+  console.log("props:", props);
+  console.log("a:",image);
   
 
   return(<>
@@ -53,19 +55,11 @@ export const ModalCourses = (props) => {
               <div className="row">
                 <div class="col-12 col-sm-12 col-md-8 box1 border border-primary">
                    
-                <CarouselCourses image={image}/>
+                <CarouselCourses imagez={image}/>
 
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
-                  <div className="row">
-                      <div class="col-12 border border-primary">
-                        Image Course
-                      </div>
-                      <div class="col-12 border border-primary">
-                        <div>Button A</div>
-                        <div>Button B</div>
-                      </div>
-                    </div>
+                  <CourseUdemyEduzzHotmartCard coursename={props.image} />
                 </div>
               </div>
               <div className="row">
@@ -82,31 +76,21 @@ export const ModalCourses = (props) => {
 
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 box2 border border-primary">
-                  <div className="row">
-                     
-                     RIGHT SIDE 
-                    </div>
+                    <div className="row">
+                        <div className="col">
+                              <BasicCard />
+                        </div>
+                     </div>
                 </div>
               </div>
-
-
-
-
-
-
-
 
               <div className="row only-mobile">
                 <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
                   <div className="row">
-                      <div class="col-12 border border-primary">
-                        Image Course
-                      </div>
-                      <div class="col-12 border border-primary">
-                        <div>Button A</div>
-                        <div>Button B</div>
-                      </div>
-                    </div>
+                   <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
+                     <CourseUdemyEduzzHotmartCard />
+                   </div>
+                  </div>
                 </div>
               </div>
             </section>

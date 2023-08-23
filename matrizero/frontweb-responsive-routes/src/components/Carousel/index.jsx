@@ -30,7 +30,7 @@ export const CarouselCourses = (props) => {
         if(k=="contact"){setIndex(2)}
       }
 
-      console.log("images:", props.image)
+      console.log("images 1:", props.imagez)
 
     return (
         <div className="row">
@@ -45,7 +45,7 @@ export const CarouselCourses = (props) => {
                         />
                     </center>
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
+                        <h3>{props.image} slide label</h3>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
 
@@ -90,7 +90,7 @@ export const CarouselCourses = (props) => {
                 className="mb-3"
             >
                 <Tab eventKey="home" title="Home">
-                    Tab content for Home Tab content for Home  Tab content for Home 
+                    O que é?
                 </Tab>
                 <Tab eventKey="profile" title="Profile">
                     Tab content for Profile
