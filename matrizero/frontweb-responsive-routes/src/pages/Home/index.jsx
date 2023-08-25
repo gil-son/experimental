@@ -1,5 +1,5 @@
   import ImgCourse from '../../assets/images/devs.png';
-  import ButtonIcon from 'components/ButtonIcon';
+  import { ButtonIcon } from 'components/ButtonIcon';
   import { AnimatedCard, MultiCards } from 'components/Card';
   import { CarouselEvent } from 'components/Carousel';
   import RadarChartWorks from 'components/Progress/index';

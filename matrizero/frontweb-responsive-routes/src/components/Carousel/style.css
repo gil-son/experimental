@@ -1,3 +1,26 @@
 .carousel{
     color:aquamarine;
 }
+
+
+.tab-style{
+    height: 308px;
+}
+
+@media (min-width: 400px) {
+    
+
+    .tab-style{
+        height: 380px;
+    }
+    
+}
+
+@media (min-width: 420px) {
+    
+
+    .tab-style{
+        height: 380px;
+    }
+    
+}

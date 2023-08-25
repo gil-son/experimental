@@ -6,6 +6,8 @@ import { CarouselCourses } from '../Carousel';
 import { ReviewsPagination } from '../Pagination';
 import { BasicCard, CourseUdemyEduzzHotmartCard } from 'components/Card';
 import Accordion from '../Accordion';
+import YouTubeVideo from '../Video';
+import { ButtonCourses } from 'components/ButtonIcon';
 import './style.css';
 
 
@@ -53,15 +55,30 @@ export const ModalCourses = ({...props}) => {
         
             <section class="container">
               <div className="row">
-                <div class="col-12 col-sm-12 col-md-8 box1 border border-primary">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 box1 border border-primary">
                    
                 <CarouselCourses imagez={image}/>
 
                 </div>
-                <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
-                  <CourseUdemyEduzzHotmartCard coursename={props.image} />
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 box2 border border-primary">
+                  {/*<CourseUdemyEduzzHotmartCard coursename={props.image} />*/}
+                  <div className="row">
+                    <div className="row">
+                        <div className="col-12 border border-success d-flex justify-content-center">
+                          <YouTubeVideo videoId={"a92nvopMzgI"}/>
+                        </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-12 border border-success">
+                      <h3>Escolha a plataforma</h3>
+                        <ButtonCourses />
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+             
               <div className="row">
                 <div className="col border border-danger">
                   <ReviewsPagination />
@@ -71,7 +88,7 @@ export const ModalCourses = ({...props}) => {
 
               <div className="row">
                 <div class="col-12 col-sm-12 col-md-6 box1 border border-primary">
-                  <h3>Perguntas Comuns:</h3>
+                  <h3>Perguntas Comuns</h3>
                   <Accordion />
 
                 </div>
@@ -88,7 +105,8 @@ export const ModalCourses = ({...props}) => {
                 <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
                   <div className="row">
                    <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
-                     <CourseUdemyEduzzHotmartCard />
+                      <h3>Escolha a plataforma</h3>
+                      <ButtonCourses />
                    </div>
                   </div>
                 </div>

@@ -10,23 +10,24 @@ import Carrousel4 from '../../assets/images/carrosel4.png';
 import Img1 from '../../assets/images/setecentesporquinhetos2.jpg';
 import Img2 from '../../assets/images/setecentesporquinhetos3.png';
 import Img3 from '../../assets/images/setecentesporquinhetos3.png';
+import './style.css';
 
 export const CarouselCourses = (props) => {
 
     const [index, setIndex] = useState(0);
-    const [key, setKey] = useState('home');
+    const [key, setKey] = useState('infos');
     
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
 
-        if (index == 0) { setKey("home") }
-        if (index == 1) { setKey("profile") }
+        if (index == 0) { setKey("infos") }
+        if (index == 1) { setKey("etapas") }
         if (index == 2) { setKey("contact") }
     };
 
     function Convert(k){
-        if(k=="home"){setIndex(0)}
-        if(k=="profile"){setIndex(1)}
+        if(k=="infos"){setIndex(0)}
+        if(k=="etapas"){setIndex(1)}
         if(k=="contact"){setIndex(2)}
       }
 
@@ -89,13 +90,20 @@ export const CarouselCourses = (props) => {
                 onSelect={(k) => { setKey(k); Convert(k)}}
                 className="mb-3"
             >
-                <Tab eventKey="home" title="Home">
-                    O que é?
+                <Tab eventKey="infos" title="Infos" className='tab-style'>
+                    <p>O Apache Camel é um <b>framework de integração que simplifica a conexão e troca de dados entre diferentes sistemas</b>, utilizando padrões de roteamento e medição. Ele facilita a criação eficiente de integrações, conectando endpoints como bancos de dados, serviços web e filas de mensagens. Com uma arquitetura flexível, o Camel permite o desenvolvimento ágil de soluções complexas, promovendo a reutilização de componentes para interações fluidas e eficazes.</p>
                 </Tab>
-                <Tab eventKey="profile" title="Profile">
-                    Tab content for Profile
+                <Tab eventKey="etapas" title="Etapas" className='tab-style'>
+                    <p>Passaremos pelas seguintes etapas:</p>
+                    <ul>
+                        <li>Etapa 1</li>
+                        <li>Etapa 2</li>
+                        <li>Etapa 3</li>
+                        <li>Etapa 4</li>
+                        <li>Etapa 5</li>
+                    </ul>
                 </Tab>
-                <Tab eventKey="contact" title="Contact" >
+                <Tab eventKey="contact" title="Contact" className='tab-style'>
                     Tab content for Contact
                 </Tab>
             </Tabs>
