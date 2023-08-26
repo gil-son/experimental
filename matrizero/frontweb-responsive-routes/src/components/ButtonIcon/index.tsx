@@ -34,7 +34,7 @@ export const ButtonCourses = () => {
  
 
   return (
-    <div className='verify'>
+    <div className='verify mb-5'>
       <a href="#" className="button button--hoo">
               <div className="button__wrapper">
                   <span className="button__text">UDEMY</span>

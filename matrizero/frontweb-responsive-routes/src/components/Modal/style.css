@@ -1,3 +1,7 @@
+.custom-modal{
+  background-color: linear-gradient(to right, #230739, #77a4fe)!important;
+}
+
 .custom-button {
     background-color: #000;
     color: #ffffff;
@@ -36,6 +40,10 @@
     color: #050505;
     border-color: #220a2d;
     transform: scale(1.1);
+  }
+
+  .sub-titles{
+    margin-bottom: 7vh;
   }
 
  /* Buttons Udemy, Eduzz, Hotmart */

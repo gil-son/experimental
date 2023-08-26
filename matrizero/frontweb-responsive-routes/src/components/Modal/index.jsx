@@ -6,7 +6,7 @@ import { CarouselCourses } from '../Carousel';
 import { ReviewsPagination } from '../Pagination';
 import { BasicCard, CourseUdemyEduzzHotmartCard } from 'components/Card';
 import Accordion from '../Accordion';
-import YouTubeVideo from '../Video';
+import { YouTubeVideo, Canvas } from '../Video';
 import { ButtonCourses } from 'components/ButtonIcon';
 import './style.css';
 
@@ -45,32 +45,31 @@ export const ModalCourses = ({...props}) => {
 
       </Button>
 
-      <Modal show={show} fullscreen={true} onHide={handleClose} className="custom-modal" >
+      <Modal show={show} fullscreen={true} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{language ? (<>ESPECIALIZAÇÃO EM APACHE CAMEL</>) : (<>APACHE CAMEL SPECIALIZATION</>)} </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-           a? {props.content}
-          <hr/>
-        
-            <section class="container">
+        <Modal.Body style={{ background: 'linear-gradient(to right, #050227, #77a4fe, #adcdfd, #77a4fe, #050227)' }}>
+           {/*a? {props.content}*/}
+            <section class="container" style={{ background: 'white' }}>
               <div className="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 box1 border border-primary">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 box1 xxx">
                    
                 <CarouselCourses imagez={image}/>
 
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 box2 border border-primary">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 box2 xxx">
                   {/*<CourseUdemyEduzzHotmartCard coursename={props.image} />*/}
                   <div className="row">
                     <div className="row">
-                        <div className="col-12 border border-success d-flex justify-content-center">
-                          <YouTubeVideo videoId={"a92nvopMzgI"}/>
+                        <div className="col-12 shadow  d-flex justify-content-center">
+                          {/*<YouTubeVideo videoId={"a92nvopMzgI"}/>*/}
+                          <Canvas />
                         </div>
                     </div>
                     <div className="row">
-                      <div className="col-12 border border-success">
-                      <h3>Escolha a plataforma</h3>
+                      <div className="col-12  shadow">
+                      <h3 className='sub-titles'>Escolha a plataforma</h3>
                         <ButtonCourses />
 
                       </div>
@@ -80,19 +79,19 @@ export const ModalCourses = ({...props}) => {
               </div>
              
               <div className="row">
-                <div className="col border border-danger">
+                <div className="col border xxx">
                   <ReviewsPagination />
                 </div>
               </div>
 
 
               <div className="row">
-                <div class="col-12 col-sm-12 col-md-6 box1 border border-primary">
+                <div class="col-12 col-sm-12 col-md-6 box1 xxx">
                   <h3>Perguntas Comuns</h3>
                   <Accordion />
 
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 box2 border border-primary">
+                <div class="col-12 col-sm-12 col-md-6 box2 xxx">
                     <div className="row">
                         <div className="col">
                               <BasicCard />
@@ -102,9 +101,9 @@ export const ModalCourses = ({...props}) => {
               </div>
 
               <div className="row only-mobile">
-                <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
+                <div class="col-12 col-sm-12 col-md-4 box2 xxx">
                   <div className="row">
-                   <div class="col-12 col-sm-12 col-md-4 box2 border border-primary">
+                   <div class="col-12 col-sm-12 col-md-4 box2 xxx">
                       <h3>Escolha a plataforma</h3>
                       <ButtonCourses />
                    </div>
@@ -570,20 +569,20 @@ function handleSubmit(event) {
           
             <button type="submit" className="btn btn-primary mt-2 my-effect w-100" disabled={checkBlockSend}>{language ? (<>Enviar</>) : (<>Send</>)}</button>
             {
-                            messageName && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("O Nome Completo está muito curto") : ("Full Name is too short")}</div>
+                            messageName && <div className=" d-flex alert alert-dark xxx mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("O Nome Completo está muito curto") : ("Full Name is too short")}</div>
             }
             {
-                            messageEmail && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o e-mail") : ("Check the email")}</div>
+                            messageEmail && <div className=" d-flex alert alert-dark xxx mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o e-mail") : ("Check the email")}</div>
             }
             {
-                            messagePhone && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o número de telefone") : ("Check phone number")}</div>
+                            messagePhone && <div className=" d-flex alert alert-dark xxx mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Verifique o número de telefone") : ("Check phone number")}</div>
             }
             {
-                            messageIsValid && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("A validação se é humano precisa ser concluida") : ("Validation if it is human needs to be completed")}</div>
+                            messageIsValid && <div className=" d-flex alert alert-dark xxx mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("A validação se é humano precisa ser concluida") : ("Validation if it is human needs to be completed")}</div>
             }
 
             {
-                            messageAgradece && <div className=" d-flex alert alert-dark border border-primary mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Agradecemos a sua mensagem!!!") : ("Thanks for your message !!!")}</div>
+                            messageAgradece && <div className=" d-flex alert alert-dark xxx mx-auto my-4 w-100 justify-content-around send-error shadow" role="alert">{language ? ("Agradecemos a sua mensagem!!!") : ("Thanks for your message !!!")}</div>
             }
             <small>{language ? (<>Preencha os campos de forma adequada para habilitar o botão Enviar</>) : (<>Fill in the fields appropriately to enable the Send button</>)}</small>
         </form>

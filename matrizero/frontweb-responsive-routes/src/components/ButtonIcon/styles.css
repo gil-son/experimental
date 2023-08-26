@@ -582,7 +582,7 @@
 /* 本体と関係ないスタイル */
 
 .button:not(:last-child){
-    margin-bottom : 50px ;
+    margin-bottom : 80px ;
 }
 
 
