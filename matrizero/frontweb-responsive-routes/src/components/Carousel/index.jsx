@@ -6,10 +6,11 @@ import Tabs from 'react-bootstrap/Tabs';
 import { ModalNotification } from 'components/Modal';
 import Carrousel2 from '../../assets/images/carrosel2.png';
 import Carrousel4 from '../../assets/images/carrosel4.png';
-
+/*
 import Img1 from '../../assets/images/aaa.jpg';
 import Img2 from '../../assets/images/setecentesporquinhetos3.png';
 import Img3 from '../../assets/images/setecentesporquinhetos3.png';
+*/
 import './style.css';
 
 export const CarouselCourses = (props) => {
