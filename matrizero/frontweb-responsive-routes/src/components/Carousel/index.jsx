@@ -89,6 +89,7 @@ export const CarouselCourses = (props) => {
                 activeKey={key}
                 onSelect={(k) => { setKey(k); Convert(k)}}
                 className="mb-3"
+ 
             >
                 <Tab eventKey="infos" title="Infos" className='tab-style'>
                     <p>O Apache Camel é um <b>framework de integração que simplifica a conexão e troca de dados entre diferentes sistemas</b>, utilizando padrões de roteamento e medição. Ele facilita a criação eficiente de integrações, conectando endpoints como bancos de dados, serviços web e filas de mensagens. Com uma arquitetura flexível, o Camel permite o desenvolvimento ágil de soluções complexas, promovendo a reutilização de componentes para interações fluidas e eficazes.</p>

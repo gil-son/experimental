@@ -41,7 +41,7 @@ export function BasicCard() {
         <Card.Text>
           Entre em contato pelo whatsapp clicando no botão abaixo.
         </Card.Text>
-        <Button variant="primary">Whatsapp</Button>
+        <Button className='btn whatsapp-button'>Whatsapp</Button>
       </Card.Body>
     </Card>
   );

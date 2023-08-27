@@ -5,14 +5,14 @@ import Pg2 from './pag2.json';
 import Pg3 from './pag3.json';
 import Pg4 from './pag4.json';
 import Pg5 from './pag5.json';
-import Preview from '../../assets/images/previews.png';
-import Next from '../../assets/images/next.png';
-import StarEmpty16 from '../../assets/images/star-empty-16.png';
+import Preview from '../../assets/images/previous-arrow.png';
+import Next from '../../assets/images/next-arrow.png';
+import StarEmpty16 from '../../assets/images/star-new-empty-16.png';
 import StarHalf16 from '../../assets/images/star-half-16.png';
-import StarAll16 from '../../assets/images/star-dark-blue-full-16.png';
+import StarAll16 from '../../assets/images/star-new-all-16.png';
 import StarEmpty32 from '../../assets/images/star-empty-24.png';
-import StarHalf32 from '../../assets/images/star-dark-blue-half-24.png';
-import StarAll32 from '../../assets/images/star-dark-blue-full-24.png';
+import StarHalf32 from '../../assets/images/star-new-half-24.png';
+import StarAll32 from '../../assets/images/star-new-all-24.png';
 import './style.css';
 
 export const ReviewsPagination = () => {

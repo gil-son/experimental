@@ -25,6 +25,19 @@
     font-weight: bold;
 }
 
+.whatsapp-button {
+    width: 100%;
+    background: linear-gradient(to bottom, #77a4fe, #050227);
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-button:hover {
+    color: #fff;
+    transform: scale(1.05); 
+  }
+  
+
 @media (max-width: 1200px) {
 .card-title{
     font-family: 'Open Sans', sans-serif;

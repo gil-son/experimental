@@ -5,20 +5,20 @@
 }
 
 
-/*
+
 .custom-pagination .page-item.active .page-link {
-    background-color: #230739; 
-    border-color: #230739; 
+    background-color: #31417B; 
+    border-color: #31417B; 
     color: #ffffff; 
   }
   
 
   .custom-pagination .page-item .page-link:hover {
-    background-color: #77a4fe; 
-    border-color: #77a4fe;
+    background-color: #31417B; 
+    border-color: #31417B;
     color: white;
   }
-*/
+
 
 .previous{
     margin-right: 1vh;
@@ -36,7 +36,7 @@
 }
 
 .rating-title{
-    color:#0D6EFD;
+    color:#31417B;
     font-size: 5vh;
     font-weight: 900;
   }

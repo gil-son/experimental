@@ -1,7 +1,15 @@
-.carousel{
-    color:aquamarine;
-}
+.nav-tabs .nav-link.active {
+    background-color: #31417B;
+    color: #fff; 
+    border-color: #31417B; 
+  }
 
+.nav-tabs .nav-link {
+    background-color: #fff;
+    color: #31417B; 
+    border-color: #fff; 
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+  }  
 
 .tab-style{
     height: 308px;
