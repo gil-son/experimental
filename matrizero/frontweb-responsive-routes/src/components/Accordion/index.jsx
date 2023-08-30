@@ -28,7 +28,7 @@ function AllCollapseExample() {
       <Accordion.Item eventKey="2">
         <Accordion.Header><p>O que serei capaz de fazer ao final do curso?</p></Accordion.Header>
         <Accordion.Body className='accordion-body'>
-        <span className='accordion-body'><p>Após cada etapa será capaz de desenvolver algo novo:</p>
+        <span className='accordion-body'><p>Você passará pelas seguintes etapas:</p>
                 <ul>
                     <li>Etapa 1</li>
                     <li>Etapa 2</li>
@@ -36,7 +36,7 @@ function AllCollapseExample() {
                     <li>Etapa 4</li>
                     <li>Etapa 5</li>
                 </ul>
-           <p>Isso para poder ter um proveito melhor do conteúdo.</p>
+           <p>A cada etapa, um quizz e um desafio para você desenvolver a sua autônomia! Será capaz de criar/desenvolver projetos e soluções!</p>
           </span>        
         </Accordion.Body>
       </Accordion.Item>

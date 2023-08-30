@@ -21,15 +21,19 @@ export const CarouselCourses = (props) => {
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
 
-        if (index == 0) { setKey("infos") }
-        if (index == 1) { setKey("etapas") }
-        if (index == 2) { setKey("contact") }
+        if (index == 4) { setKey("infos") } // os componentes no modo automático tem uma inicialização diferente, o carrosel mostra o seguinte apos o interval que é o etapas, e só após essa mudança que o onchange reconhece
+        if (index == 0) { setKey("etapas") }
+        if (index == 1) { setKey("beneficio") }
+        if (index == 2) { setKey("oportunidade") }
+        if (index == 3) { setKey("salario") }
     };
 
     function Convert(k){
         if(k=="infos"){setIndex(0)}
         if(k=="etapas"){setIndex(1)}
-        if(k=="contact"){setIndex(2)}
+        if(k=="beneficio"){setIndex(2)}
+        if(k=="oportunidade"){setIndex(3)}
+        if(k=="salario"){setIndex(4)}
       }
 
       console.log("images 1:", props.imagez)
@@ -37,7 +41,7 @@ export const CarouselCourses = (props) => {
     return (
         <div className="row">
             <div class="col-12">
-            <Carousel activeIndex={index} onSelect={handleSelect} fade>
+            <Carousel interval={10000} activeIndex={index} onSelect={handleSelect} fade>
                 <Carousel.Item>
                     <center>
                         <img
@@ -82,6 +86,38 @@ export const CarouselCourses = (props) => {
                     </Carousel.Caption>
 
                 </Carousel.Item>
+                <Carousel.Item>
+                    <center>
+                        <img
+                            className="d-block"
+                            src={'https://camo.githubusercontent.com/1746381ced92be0446c55b58076670b5356d401e380801f87169fce469c40bb2/68747470733a2f2f666c616769636f6e732e6c697069732e6465762f666c6167732f3478332f6a702e737667' + '?text=Third slide&bg=eee'}
+                            alt="Foruth slide"
+                        />
+                    </center>
+                    <Carousel.Caption>
+                        <h3>Fourth slide label</h3>
+                        <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        </p>
+                    </Carousel.Caption>
+
+                </Carousel.Item>
+                <Carousel.Item>
+                    <center>
+                        <img
+                            className="d-block"
+                            src={'https://camo.githubusercontent.com/1746381ced92be0446c55b58076670b5356d401e380801f87169fce469c40bb2/68747470733a2f2f666c616769636f6e732e6c697069732e6465762f666c6167732f3478332f6a702e737667' + '?text=Third slide&bg=eee'}
+                            alt="Foruth slide"
+                        />
+                    </center>
+                    <Carousel.Caption>
+                        <h3>Fifth slide label</h3>
+                        <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        </p>
+                    </Carousel.Caption>
+
+                </Carousel.Item>
             </Carousel>
             </div>
             <div class="col-12 col-sm-12 col-md-4 box2 border border-primary w-100">
@@ -104,9 +140,46 @@ export const CarouselCourses = (props) => {
                         <li>Etapa 4</li>
                         <li>Etapa 5</li>
                     </ul>
+                    <p>A cada etapa, um quizz e um desafio para você desenvolver a sua autônomia! Será capaz de criar/desenvolver projetos e soluções!</p>
                 </Tab>
-                <Tab eventKey="contact" title="Contact" className='tab-style'>
-                    Tab content for Contact
+                <Tab eventKey="beneficio" title="Benefícios" className='tab-style'>
+                    b
+                </Tab>
+                <Tab eventKey="oportunidade" title="Oportunidades" className='tab-style'>
+                    <p>Grande parte das empresas que utilizam Apache Camel, são:</p>
+                    <p>Setor Financeiro, Telecomunicações, Saúde, E-commerce, Logística e Transporte, Energia e Serviços Públicos, Governo, Indústria Automotiva, Tecnologia da Informação</p>
+                </Tab>
+                <Tab eventKey="salario" title="Salários" className='tab-style'>
+                <p>Médias Salariais (mensais) para Desenvolvedores com Foco em Apache Camel:</p>
+                    <div class="container mt-4">
+                        <table class="table table-bordered">
+                            <thead class="table-thead">
+                            <tr>
+                                <th></th>
+                                <th>Dev Junior</th>
+                                <th>Dev Pleno</th>
+                                <th>Dev Sênior</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>Brasil</td>
+                                <td>R$ 4k - 6k</td>
+                                <td>R$ 6k - 10k</td>
+                                <td>R$ 10k - 15+</td>
+                            </tr>
+                            <tr>
+                                <td>Exterior</td>
+                                <td>US$ 3,5k - 6k</td>
+                                <td>US$ 6k - 8,5k</td>
+                                <td>US$ 8,5k - 12,5+</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>fontes:</p>
+                    <ul>
+                        <li>Glassdor</li>
+                        <li>Sim Carreira</li>
+                    </ul>
                 </Tab>
             </Tabs>
             </div>
