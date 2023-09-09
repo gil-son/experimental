@@ -51,6 +51,7 @@
   
   
     <div className='bbb'>
+      <Circle />
       <div className='ccc'>
         <div className="image">
           <img src={ImgCourse}/>
