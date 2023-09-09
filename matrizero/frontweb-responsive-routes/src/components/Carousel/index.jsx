@@ -8,9 +8,9 @@ import Carrousel2 from '../../assets/images/carrosel2.png';
 import Carrousel4 from '../../assets/images/carrosel4.png';
 /*
 import Img1 from '../../assets/images/aaa.jpg';
-import Img2 from '../../assets/images/setecentesporquinhetos3.png';
 import Img3 from '../../assets/images/setecentesporquinhetos3.png';
 */
+import Img2 from '../../assets/images/stages.gif';
 import './style.css';
 
 export const CarouselCourses = (props) => {
@@ -46,7 +46,7 @@ export const CarouselCourses = (props) => {
                     <center>
                         <img
                             className="d-block"
-                            src={'https://camo.githubusercontent.com/cfe7e3cecf04e914c03e9bcf6c3014de8af330b9cf727a244e52e83d4cc98cef/68747470733a2f2f666c616769636f6e732e6c697069732e6465762f666c6167732f3478332f62722e737667' + '?text=First slide&bg=eee'}
+                            src={Img2}
                             alt="First slide"
                         />
                     </center>
@@ -60,7 +60,7 @@ export const CarouselCourses = (props) => {
                     <center>
                         <img
                             className="d-block"
-                            src={'https://camo.githubusercontent.com/83fbb50908762a418aa7b996e7f0c6888a51a4585a992fbcab51827adc32f4f1/68747470733a2f2f666c616769636f6e732e6c697069732e6465762f666c6167732f3478332f75732e737667' + '?text=Second slide&bg=eee'}
+                            src={Img2}
                             alt="Second slide"
                         />
                     </center>
@@ -74,7 +74,7 @@ export const CarouselCourses = (props) => {
                     <center>
                         <img
                             className="d-block"
-                            src={'https://camo.githubusercontent.com/1746381ced92be0446c55b58076670b5356d401e380801f87169fce469c40bb2/68747470733a2f2f666c616769636f6e732e6c697069732e6465762f666c6167732f3478332f6a702e737667' + '?text=Third slide&bg=eee'}
+                            src={Img2}
                             alt="Third slide"
                         />
                     </center>
@@ -90,7 +90,7 @@ export const CarouselCourses = (props) => {
                     <center>
                         <img
                             className="d-block"
-                            src={'https://camo.githubusercontent.com/1746381ced92be0446c55b58076670b5356d401e380801f87169fce469c40bb2/68747470733a2f2f666c616769636f6e732e6c697069732e6465762f666c6167732f3478332f6a702e737667' + '?text=Third slide&bg=eee'}
+                            src={Img2}
                             alt="Foruth slide"
                         />
                     </center>
@@ -106,7 +106,7 @@ export const CarouselCourses = (props) => {
                     <center>
                         <img
                             className="d-block"
-                            src={'https://camo.githubusercontent.com/1746381ced92be0446c55b58076670b5356d401e380801f87169fce469c40bb2/68747470733a2f2f666c616769636f6e732e6c697069732e6465762f666c6167732f3478332f6a702e737667' + '?text=Third slide&bg=eee'}
+                            src={Img2}
                             alt="Foruth slide"
                         />
                     </center>
