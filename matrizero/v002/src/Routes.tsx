@@ -19,6 +19,9 @@ const Routes = () => (
       <Route path="/linguas">
         <Linguas />
       </Route>
+      <Route path="/sobre">
+        <Contacts />
+      </Route>
       <Route path="/contatos">
         <Contacts />
       </Route>
