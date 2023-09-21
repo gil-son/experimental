@@ -1,0 +1,82 @@
+[
+    {
+        "id":1,
+        "name":"Zero ao Hero em Apache Camel",
+        "free": false,
+        "price":"99,90",
+        "link":"https://www.youtube.com/channel/UCMa16OB5qr0qezTRJUBzWlQ",
+        "image":"https://thumbs2.imgbox.com/36/54/zqJnAsaK_t.jpg",
+        "matrizero":true,
+        "info": "Especialização em Apache Camel. Conceitos e práticas de arquiteturas EIP, REST API, Filas, organização de rotas e dados (JSON, XML, CSV, etc)! Testes Unitários e+"
+    },
+    {
+        "id":2,
+        "name":"Leitura e Interpretação de Projetos",
+        "free": false,
+        "price":"297.00",
+        "link":"https://go.hotmart.com/V83145506H?dp=1",
+        "image":"https://static-media.hotmart.com/_TF_yjvYt54sOaxRx87CDAS_QSs=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_contents/80df57a5-21ee-4f2f-9208-90cd14f4b950/WhatsAppImage20211002at1147252.jpeg?w=920",
+        "matrizero":false,
+        "info": "Você aprenderá sobre os tipos de desenho, as normas técnicas de desenho técnico e quais os materiais utilizados para desenvolver os desenhos arquitetônicos!"
+    },
+    {
+        "id":3,
+        "name":"Desenvolvedor Full Stack Turbo",
+        "free": false,
+        "price":"297.00",
+        "link":"https://go.hotmart.com/H77702947T?dp=1",
+        "image":"https://static-media.hotmart.com/IBs7kcc32Wo6h1xis7qRYtOcP8M=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/b1d4616b-18d1-4181-9efe-d426d096940d/PROJETOCURSODESENVOLVEDORFULLSTACKTURBO.jpg?w=920",
+        "matrizero":false,
+        "info": "Um curso Full Stack completo! Abrange conceitos necessários como HTML, CSS, JavaScript, SQL... até mais avançados como React JS, Node JS, NoSQL, etc. Validações, Autenticações e Segurança!"
+    },
+    {
+        "id":4,
+        "name":"Apache Camel o início da jornada",
+        "free": true,
+        "price":"0.00",
+        "link":"https://www.youtube.com/channel/UCMa16OB5qr0qezTRJUBzWlQ",
+        "image":"https://cdn.pixabay.com/photo/2014/05/10/19/23/presentation-341444_1280.png",
+        "matrizero":true,
+        "info": "Curso com foco em conceitos iniciais em Apache Camel. Conceitos e práticas de rotas de arquivos e REST API. Criação de um projeto para conhecer e se desenvolver!"
+    },
+    {
+        "id":5,
+        "name":"LinkedIn - Como se destacar dos demais usuários",
+        "free": false,
+        "price":"84,50",
+        "link":"https://go.hotmart.com/X83148423E?dp=1",
+        "image":"https://static-media.hotmart.com/SOVsF5z8omZ73ypqVzLVeeC4h3g=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/30668507-cb96-472e-806e-b39974d38e8a/Hotmart_LinkedIn1.png?w=920",
+        "matrizero":false,
+        "info": "Como se destacar dos demais usuários da rede, com um perfil forte e completo. Construa um perfil de acordo com os seus objetivos. Aumente a visibilidade do perfil!"
+    },
+    {
+        "id":6,
+        "name":"Curso de Pronúncia Essencial - Inglês",
+        "free": false,
+        "price":"47.00",
+        "link":"https://go.hotmart.com/P83147943X?dp=1",
+        "image":"https://static-media.hotmart.com/Li8oRdNIe9HLGv04okconGdAW68=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/a3dc805c-dcbf-4d9b-bd7f-b1dd9b127b0b/RodrigoRXCurso.png?w=920",
+        "matrizero":false,
+        "info": "A pronúncia é a ferramenta que permite que entendamos como os falantes nativos de uma língua usam os sons em associação com as letras e conjunto de letras nas palavras."
+    },
+    {
+        "id":7,
+        "name":"Curso de Node.js",
+        "free": true,
+        "price":"0.00",
+        "link":"https://celke.com.br/curso/curso-de-node-js?pagi=gratnode&ref=Q83145892X",
+        "image":"https://static-media.hotmart.com/LfTEwt_44V6MKnkQ1txd0jPkLzk=/295x165/smart/filters:quality(100)/hotmart/product_pictures/ab82bff2-0e72-484b-93be-caa93155d3d5/cursodenodejshotmart.jpg",
+        "matrizero":false,
+        "info": "O curso de Node começa desde o básico e finaliza com a criação do projeto prático com banco de dados MySQL. Também é apresentado como criar o site e o sistema administrativo do site com Node.js."
+    },
+    {
+        "id":8,
+        "name":"De boa com a ansiedade",
+        "free": false,
+        "price":"2.270,00",
+        "link":"https://go.hotmart.com/C83148313V",
+        "image":"https://static-media.hotmart.com/cFrCbR3jKxfN0HCA6mdgXvT_1xQ=/295x165/smart/filters:quality(100)/hotmart/product_pictures/45fabd6e-93a8-470e-bfc9-d3a33a83f775/deboacomaAnsiedade1.png",
+        "matrizero":false,
+        "info": "Se sente ansioso(a) e preocupado(a) ao iniciar um projeto? Isso é normal, desde que não perca a sua saúde mental! Busque ajuda! Se tem condições, considere ser ajudado(a) e otimize primeiro a si, depois o código"
+    }
+]

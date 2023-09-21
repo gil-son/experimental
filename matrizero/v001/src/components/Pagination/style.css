@@ -1,0 +1,66 @@
+.buttons{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+}
+
+
+
+.custom-pagination .page-item.active .page-link {
+    background-color: #31417B; 
+    border-color: #31417B; 
+    color: #ffffff; 
+  }
+  
+
+  .custom-pagination .page-item .page-link:hover {
+    background-color: #31417B; 
+    border-color: #31417B;
+    color: white;
+  }
+
+
+.previous{
+    margin-right: 1vh;
+    cursor:pointer;
+    
+}
+
+.next{
+    margin-left: 1vh;
+    cursor:pointer;
+}
+.pageof{
+    margin-left: 1vh;
+    color: #230739;
+}
+
+.rating-title{
+    color:#31417B;
+    font-size: 5vh;
+    font-weight: 900;
+  }
+  
+.evaluation-count{
+    color: #230739;
+    margin-left: 1vh;
+}  
+
+.rating-card{
+ box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2) ;
+    
+}
+
+.evaluation-name{
+    color: #230739;
+}
+  
+.space-message-rating-card{
+ height: 10vh;
+ font-size: large;
+}
+  
+.space-date-rating-card{
+ height: 3vh;
+ background-color: #0D6EFD;
+}

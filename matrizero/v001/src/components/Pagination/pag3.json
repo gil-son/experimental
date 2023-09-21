@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "rating": 5,
+      "name": "Fernando",
+      "date": "05/08/2023",
+      "message": "Estou impressionado com a qualidade do curso! Recomendo a todos interessados."
+    },
+    {
+      "rating": 5,
+      "name": "Amanda",
+      "date": "04/08/2023",
+      "message": "O curso é muito bom e abrangente, mas mais opções de conteúdo seriam bem-vindas."
+    },
+    {
+      "rating": 5,
+      "name": "Lucas",
+      "date": "03/08/2023",
+      "message": "O curso superou minhas expectativas, especialmente a forma como os tópicos são abordados."
+    },
+    {
+      "rating": 5,
+      "name": "Letícia",
+      "date": "02/08/2023",
+      "message": "Recomendo o curso para quem deseja aprender de forma abrangente e sólida."
+    }
+  ],
+  "total_pages": 5,
+  "current_page": 3
+}

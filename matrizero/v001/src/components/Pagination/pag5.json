@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "rating": 4,
+      "name": "Fábio",
+      "date": "28/07/2023",
+      "message": "Embora tenha encontrado alguns pontos que precisam ser ajustados, o curso ainda é valioso."
+    },
+    {
+      "rating": 4,
+      "name": "Renata",
+      "date": "27/07/2023",
+      "message": "O curso oferece uma experiência razoável, mas esperava um pouco mais."
+    },
+    {
+      "rating": 5,
+      "name": "Larissa",
+      "date": "26/07/2023",
+      "message": "Fiquei impressionada com a qualidade do curso! Recomendo fortemente."
+    },
+    {
+      "rating": 5,
+      "name": "Eduardo",
+      "date": "25/07/2023",
+      "message": "Este curso é muito bom e definitivamente merece ser recomendado."
+    }
+  ],
+  "total_pages": 5,
+  "current_page": 5
+}

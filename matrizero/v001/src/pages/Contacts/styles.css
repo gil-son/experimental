@@ -1,0 +1,13 @@
+
+
+@media (min-width: 350px) {
+    iframe{
+        width:350px !important; height:350px !important;
+    }
+}
+
+@media (min-width: 500px) {
+    iframe{
+        width:480px !important; height:480px !important;
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "rating": 5,
+      "name": "João",
+      "date": "13/08/2023",
+      "message": "O curso é incrível! Estou muito satisfeito com o conteúdo."
+    },
+    {
+      "rating": 5,
+      "name": "Maria",
+      "date": "12/08/2023",
+      "message": "Gostei muito do curso, superou minhas expectativas."
+    },
+    {
+      "rating": 4,
+      "name": "Pedro",
+      "date": "11/08/2023",
+      "message": "O curso é bom, atendeu às minhas expectativas."
+    },
+    {
+      "rating": 4,
+      "name": "Ana",
+      "date": "10/08/2023",
+      "message": "Adorei o curso! Recomendo a todos interessados na área."
+    }
+  ],
+  "total_pages": 5,
+  "current_page": 1
+}

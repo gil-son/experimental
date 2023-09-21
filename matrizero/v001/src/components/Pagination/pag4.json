@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "rating": 4,
+      "name": "Gustavo",
+      "date": "01/08/2023",
+      "message": "O curso é de qualidade, mas o preço pode ser um pouco alto para alguns."
+    },
+    {
+      "rating": 4,
+      "name": "Juliana",
+      "date": "31/07/2023",
+      "message": "O curso tem seus méritos, mas não sei se compraria novamente."
+    },
+    {
+      "rating": 5,
+      "name": "Roberto",
+      "date": "30/07/2023",
+      "message": "Maravilhoso! Este curso definitivamente valeu a pena."
+    },
+    {
+      "rating": 5,
+      "name": "Patrícia",
+      "date": "29/07/2023",
+      "message": "Gostei muito do curso, mesmo que tenha demorado um pouco."
+    }
+  ],
+  "total_pages": 5,
+  "current_page": 4
+}
