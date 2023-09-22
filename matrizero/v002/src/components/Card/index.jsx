@@ -142,21 +142,21 @@ export function MultiCards() {
  },[obj.mylanguage.language]);
 
  const userData = {
-  languagem1: 'Camel',
-  languagem2: 'Java',
-  languagem3: 'Spring Boot'
+  languagem1: 'CAMEL',
+  languagem2: 'JAVA',
+  languagem3: 'SPRING BOOT'
 };
 
 const userImg = {
-  languagem1: 'Camel',
-  languagem2: 'Java',
-  languagem3: 'Spring Boot'
+  languagem1: 'CAMEL',
+  languagem2: 'JAVA',
+  languagem3: 'SPRING BOOT'
 };
 
 const freeData = {
-  languagem1: 'Free Camel',
-  languagem2: 'Free Java',
-  languagem3: 'Free Spring Boot'
+  languagem1: 'FREE CAMEL',
+  languagem2: 'FREE JAVA',
+  languagem3: 'FREE SPRING BOOT'
 };
 
   return (

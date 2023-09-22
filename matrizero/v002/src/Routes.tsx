@@ -12,7 +12,7 @@ const Routes = () => (
         <Home />
       </Route>
       <Route path="/sobre">
-        <Contacts />
+        
       </Route>
       <Route path="/contatos">
         <Contacts />

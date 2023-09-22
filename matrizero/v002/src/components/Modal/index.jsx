@@ -11,9 +11,6 @@ import { ButtonCourses } from 'components/ButtonIcon';
 import './style.css';
 
 
-
-
-
 export const ModalCourses = ({...props}) => {
 
   let dispatch = useDispatch();
@@ -47,10 +44,10 @@ export const ModalCourses = ({...props}) => {
 
       <Modal show={show} fullscreen={true} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{language ? (<>ESPECIALIZAÇÃO EM APACHE CAMEL</>) : (<>APACHE CAMEL SPECIALIZATION</>)} </Modal.Title>
+          <Modal.Title>{language ? (<>ESPECIALIZAÇÃO EM APACHE {props.content}</>) : (<>APACHE {props.content} SPECIALIZATION</>)} </Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ background: 'linear-gradient(to right, #050227, #77a4fe, #adcdfd, #77a4fe, #050227)' }}>
-           {/*a? {props.content}*/}
+      
             <section class="container" style={{ background: 'white' }}>
               <div className="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 box1 xxx">
